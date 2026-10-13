@@ -13,7 +13,8 @@
     "astro": "astro",
     "lint": "eslint . --ext .js,.ts,.jsx,.tsx,.astro,.md,.json",
     "lint:fix": "eslint . --ext .js,.ts,.jsx,.tsx,.astro,.md,.json --fix",
-    "types": "tsc --noEmit && astro check"
+    "types": "tsc --noEmit && astro check",
+    "check": "pn lint && pn types"
   },
   "dependencies": {
     "astro": "^7.3.8",
