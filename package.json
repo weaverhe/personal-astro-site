@@ -12,13 +12,15 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint . --ext .js,.ts,.jsx,.tsx,.astro,.md,.json",
-    "lint:fix": "eslint . --ext .js,.ts,.jsx,.tsx,.astro,.md,.json --fix"
+    "lint:fix": "eslint . --ext .js,.ts,.jsx,.tsx,.astro,.md,.json --fix",
+    "types": "tsc --noEmit && astro check"
   },
   "dependencies": {
     "astro": "^7.3.8",
     "eslint-config-xo": "^5.0.0"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.10",
     "eslint": "^10.12.0",
     "eslint-plugin-astro": "^3.2.1",
     "eslint-plugin-jsx-a11y": "^6.10.2",
