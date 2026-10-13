@@ -14,7 +14,8 @@
     "lint": "eslint . --ext .js,.ts,.jsx,.tsx,.astro,.md,.json",
     "lint:fix": "eslint . --ext .js,.ts,.jsx,.tsx,.astro,.md,.json --fix",
     "types": "tsc --noEmit && astro check",
-    "check": "pn lint && pn types"
+    "check": "pn lint && pn types",
+    "prepare": "husky"
   },
   "dependencies": {
     "astro": "^7.3.8",
@@ -25,6 +26,7 @@
     "eslint": "^10.12.0",
     "eslint-plugin-astro": "^3.2.1",
     "eslint-plugin-jsx-a11y": "^6.10.2",
+    "husky": "^9.1.7",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.71.2"
   }
