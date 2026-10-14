@@ -76,4 +76,8 @@
   --slow-spin: full-spin 30s linear infinite;
   --badge-ring: full-spin 24s linear infinite;
   --blink: blink 1.6s ease-in-out infinite;
+
+  /* strokes */
+  --stroke-bold: 3px;
+  --stroke-fine: 2px;
 }
