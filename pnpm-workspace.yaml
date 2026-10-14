@@ -4,3 +4,4 @@ allowBuilds:
 peerDependencyRules:
   allowedVersions:
     eslint-plugin-jsx-a11y>eslint: "10"
+    "@storybook-astro/framework>vitest": "5"

@@ -18,7 +18,9 @@
     "types": "tsc --noEmit && astro check",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "check": "pn format:check && pn lint && pn lint:css && pn types",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "check": "pn format:check && pn lint && pn lint:css && pn types && pn test:run",
     "prepare": "husky",
     "storybook": "storybook dev",
     "storybook:build": "storybook build"
@@ -48,7 +50,8 @@
     "stylelint-config-standard": "^40.0.0",
     "stylelint-order": "^8.1.2",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.71.2"
+    "typescript-eslint": "^8.71.2",
+    "vitest": "^5.0.4"
   },
   "browserslist": [
     "defaults"
