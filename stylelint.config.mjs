@@ -4,6 +4,7 @@ export default {
     "stylelint-config-standard",
     "stylelint-config-html",
     "stylelint-config-clean-order",
+    "stylelint-config-modern",
   ],
   rules: {
     // CSS Modules class names don't need to follow a global naming convention
