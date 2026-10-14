@@ -8,4 +8,5 @@ export default {
   features: {
     sidebarOnboardingChecklist: false,
   },
+  addons: ["@storybook/addon-docs"],
 };
