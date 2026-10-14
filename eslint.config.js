@@ -13,4 +13,16 @@ export default defineConfig([
   }),
   eslintPluginAstro.configs.recommended,
   eslintPluginAstro.configs["jsx-a11y-recommended"],
+  {
+    files: ["src/components/**/*.{js,jsx,ts,tsx,astro}"],
+    rules: {
+      "unicorn/filename-case": [
+        "error",
+        {
+          case: "pascalCase",
+          directoryRoots: ["src/components"],
+        },
+      ],
+    },
+  },
 ]);
