@@ -80,4 +80,22 @@
   /* strokes */
   --stroke-bold: 3px;
   --stroke-fine: 2px;
+
+  /* shadows */
+  --shadow-xs: 2px 2px 0 var(--ink);
+  --shadow-sm: 3px 3px 0 var(--ink);
+  --shadow-md: 5px 5px 0 var(--ink);
+  --shadow-lg: 8px 8px 0 var(--ink);
+  --shadow-xl: 12px 12px 0 var(--ink);
+  --shadow-accent: 5px 5px 0 var(--pink);
+  --shadow-accent-lg: 8px 8px 0 var(--pink);
+
+  /* a11y */
+  --focus-ring: 0 0 0 3px var(--cream), 0 0 0 6px var(--ink);
+}
+
+/* a11y */
+:where(a, button, input, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid transparent;
+  box-shadow: var(--focus-ring);
 }
