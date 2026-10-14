@@ -1,0 +1,25 @@
+:root {
+  /* colors - by name */
+  --cream: oklch(97.3556% 0.016 58.6413deg); /* #fff4ec */
+  --white: oklch(99% 0.0068 67.75deg); /* #fffbf7 */
+  --blush: oklch(94.82% 0.0297 52.72deg); /* #ffe9dc */
+  --peach: oklch(89.73% 0.629 55.14deg); /* #ffd3b6 */
+  --apricot: oklch(86.29% 0.0834 51.53deg); /* #ffc3a0 */
+  --salmon: oklch(82.27% 0.0993 19.41deg); /* #ffabab */
+  --lilac: oklch(80.79% 0.0664 325.35deg); /* #d7b2d8 */
+  --pink: oklch(71.03% 0.1852 14.41deg); /* #ff677d */
+  --gray: oklch(43.16% 0.0281 1.65deg); /* #5e4a4f */
+  --ink: oklch(24.14% 0.0278 3.95deg); /* #2b1a1e */
+
+  /* colors - usage aliases */
+  --text: var(--ink);
+  --secondary-text: var(--gray);
+  --accent: var(--pink);
+  --active: var(--lilac);
+  --marks: var(--salmon);
+  --panels: var(--apricot);
+  --brand: var(--peach);
+  --brand-tint: var(--blush);
+  --raised: var(---white);
+  --page: var(--cream);
+}
