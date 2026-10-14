@@ -39,6 +39,7 @@
     "eslint-plugin-astro": "^3.2.1",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "husky": "^9.1.7",
+    "lint-staged": "^17.6.0",
     "postcss-html": "^2.0.0",
     "postcss-preset-env": "^11.6.1",
     "postcss-utilities": "^0.8.4",
@@ -54,6 +55,17 @@
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.71.2",
     "vitest": "^5.0.4"
+  },
+  "lint-staged": {
+    "*.{js,ts,jsx,tsx,astro,md,json}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,astro}": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.{js,ts,jsx,tsx,astro}": "vitest related --run"
   },
   "browserslist": [
     "defaults"
