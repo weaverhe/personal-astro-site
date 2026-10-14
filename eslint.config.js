@@ -8,14 +8,9 @@ export default defineConfig([
   ...eslintConfigXo({
     browser: true,
     space: true,
+    // Turn off formatting rules; Prettier handles formatting
+    prettier: "compat",
   }),
   eslintPluginAstro.configs.recommended,
   eslintPluginAstro.configs["jsx-a11y-recommended"],
-  {
-    files: ["**/*.{js,jsx,mjs,cjs,ts,tsx,mts,cts,astro}"],
-    rules: {
-      "@stylistic/jsx-quotes": ["error", "prefer-double"],
-      "@stylistic/quotes": ["error", "double"],
-    },
-  },
 ]);
