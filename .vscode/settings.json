@@ -1,0 +1,3 @@
+{
+  "astro.language-server.ls-path": "./node_modules/@astrojs/language-server/bin/nodeServer.js"
+}

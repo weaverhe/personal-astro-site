@@ -18,6 +18,9 @@ importers:
       '@astrojs/check':
         specifier: ^0.9.10
         version: 0.9.10(@emnapi/runtime@1.11.3)(prettier-plugin-astro@1.1.1(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(prettier@3.9.10))(prettier@3.9.10)(typescript@6.0.3)
+      '@astrojs/language-server':
+        specifier: ^2.17.2
+        version: 2.17.2(@emnapi/runtime@1.11.3)(prettier-plugin-astro@1.1.1(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(prettier@3.9.10))(prettier@3.9.10)(typescript@6.0.3)
       '@storybook-astro/framework':
         specifier: ^1.12.0
         version: 1.12.0(astro@7.3.8(@types/node@26.6.5)(esbuild@0.28.2)(yaml@2.9.1))(storybook@10.6.2(prettier@3.9.10)(react@19.3.0))(typescript@6.0.3)(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(yaml@2.9.1))(vitest@5.0.4(@types/node@26.6.5)(vite@8.3.4(@types/node@26.6.5)(esbuild@0.28.2)(yaml@2.9.1)))
@@ -6968,7 +6971,7 @@ snapshots:
       emmet: 2.4.11
       jsonc-parser: 2.3.1
       vscode-languageserver-textdocument: 1.0.15
-      vscode-languageserver-types: 3.17.5
+      vscode-languageserver-types: 3.18.4
       vscode-uri: 3.2.0
 
   '@vscode/l10n@0.0.18': {}
@@ -10598,14 +10601,14 @@ snapshots:
     dependencies:
       '@vscode/l10n': 0.0.18
       vscode-languageserver-textdocument: 1.0.15
-      vscode-languageserver-types: 3.17.5
+      vscode-languageserver-types: 3.18.4
       vscode-uri: 3.2.0
 
   vscode-json-languageservice@4.1.8:
     dependencies:
       jsonc-parser: 3.3.1
       vscode-languageserver-textdocument: 1.0.15
-      vscode-languageserver-types: 3.17.5
+      vscode-languageserver-types: 3.18.4
       vscode-nls: 5.2.0
       vscode-uri: 3.2.0
 
@@ -10721,7 +10724,7 @@ snapshots:
       vscode-json-languageservice: 4.1.8
       vscode-languageserver: 9.0.1
       vscode-languageserver-textdocument: 1.0.15
-      vscode-languageserver-types: 3.17.5
+      vscode-languageserver-types: 3.18.4
       vscode-uri: 3.2.0
       yaml: 2.8.3
 
