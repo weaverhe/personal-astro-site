@@ -27,6 +27,20 @@
   src: url("/fonts/mono.ttf") format("truetype");
 }
 
+/* animation keyframes */
+@keyframes full-spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes blink {
+  50% {
+    visibility: hidden;
+  }
+}
+
+/* variables */
 :root {
   /* colors - by name */
   --cream: oklch(97.3556% 0.016 58.6413deg); /* #fff4ec */
@@ -57,4 +71,9 @@
   --font-heading: var(--font-display);
   --font-body: "Atkinson Hyperlegible", verdana, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* animations */
+  --slow-spin: full-spin 30s linear infinite;
+  --badge-ring: full-spin 24s linear infinite;
+  --blink: blink 1.6s ease-in-out infinite;
 }
