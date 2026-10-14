@@ -1,6 +1,10 @@
 // eslint-disable-next-line import-x/no-anonymous-default-export -- stylelint recommended export
 export default {
-  extends: ["stylelint-config-standard", "stylelint-config-html", "stylelint-config-clean-order"],
+  extends: [
+    "stylelint-config-standard",
+    "stylelint-config-html",
+    "stylelint-config-clean-order",
+  ],
   rules: {
     // CSS Modules class names don't need to follow a global naming convention
     "selector-class-pattern": null,
@@ -17,4 +21,3 @@ export default {
     "value-keyword-case": ["lower", {ignoreProperties: ["composes"]}],
   },
 };
-

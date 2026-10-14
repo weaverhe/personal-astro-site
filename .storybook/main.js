@@ -4,7 +4,6 @@ export default {
   framework: {
     name: "@storybook-astro/framework",
     options: {},
-
   },
   features: {
     sidebarOnboardingChecklist: false,
