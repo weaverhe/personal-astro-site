@@ -11,6 +11,8 @@ export default {
       {ignoreProperties: ["position-try-fallbacks", "composes"]},
     ],
     "function-no-unknown": [true, {ignoreFunctions: ["anchor"]}],
+    // `@util` is provided by postcss-utilities
+    "at-rule-no-unknown": [true, {ignoreAtRules: ["util"]}],
     // CSS Modules `composes` values reference class names that may be camelCase
     "value-keyword-case": ["lower", {ignoreProperties: ["composes"]}],
   },

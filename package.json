@@ -29,11 +29,14 @@
     "@astrojs/check": "^0.9.10",
     "@storybook-astro/framework": "^1.12.0",
     "@storybook/builder-vite": "^10.6.2",
+    "cssnano": "^9.8.0",
     "eslint": "^10.12.0",
     "eslint-plugin-astro": "^3.2.1",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "husky": "^9.1.7",
     "postcss-html": "^2.0.0",
+    "postcss-preset-env": "^11.6.1",
+    "postcss-utilities": "^0.8.4",
     "storybook": "^10.6.2",
     "stylelint": "^17.16.0",
     "stylelint-config-clean-order": "^10.0.0",
@@ -42,5 +45,8 @@
     "stylelint-order": "^8.1.2",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.71.2"
-  }
+  },
+  "browserslist": [
+    "defaults"
+  ]
 }
