@@ -1,0 +1,138 @@
+.right-arrow,
+.external-link {
+  display: inline flow-root;
+  font-weight: 700;
+  transition: var(--quick-ui-change);
+}
+
+.right-arrow {
+  transform: translateY(-0.2em);
+}
+
+.external-link {
+  font-family: var(--font-mono);
+  font-weight: 900;
+}
+
+.button {
+  cursor: pointer;
+
+  min-block-size: 52px;
+  padding: 10px 22px;
+  border: var(--stroke-bold) solid var(--ink);
+  border-radius: var(--radius-pill);
+
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-decoration: none;
+
+  appearance: none;
+  box-shadow: var(--shadow-md);
+
+  transition: var(--quick-ui-change);
+
+  font-stretch: 112%;
+
+  &:hover {
+    transform: translate(3px, 3px);
+    box-shadow: var(--shadow-xs);
+  }
+
+  &:active {
+    transform: translate(5px, 5px);
+    box-shadow: none;
+  }
+
+  &:focus-visible {
+    transform: translate(3px, 3px);
+    outline: 2px solid transparent;
+    box-shadow: var(--shadow-xs);
+  }
+
+  &:hover,
+  &:active,
+  &:focus-visible {
+    .right-arrow {
+      transform: translate(0.5em, -0.2em);
+    }
+
+    .external-link {
+      transform: translateY(-0.1em);
+    }
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+
+    border-color: var(--gray);
+
+    color: var(--gray);
+
+    opacity: 0.8;
+    background-color: var(--cream);
+    box-shadow: none;
+
+    &:hover,
+    &:active {
+      transform: none;
+    }
+  }
+
+  @media screen and (width >= 768px) {
+    min-block-size: 54px;
+    padding: 12px 26px;
+    font-size: 1.0625rem;
+  }
+}
+
+.white {
+  color: var(--ink);
+  background-color: var(--white);
+
+  &:focus-visible {
+    background-color: var(--blush);
+  }
+}
+
+.pink {
+  color: var(--ink);
+  background-color: var(--pink);
+
+  &:focus-visible {
+    background-color: var(--salmon);
+  }
+}
+
+.ink {
+  --shadow-color: var(--pink);
+
+  color: var(--apricot);
+  background-color: var(--ink);
+
+  &:focus-visible {
+    background-color: var(--gray);
+  }
+}
+
+.large {
+  min-block-size: 60px;
+  padding: 14px 28px;
+  font-size: 1.125rem;
+
+  @media screen and (width >= 768px) {
+    min-block-size: 64px;
+    padding: 16px 32px;
+    font-size: 1.25rem;
+  }
+}
+
+.glyph-container {
+  display: inline flow-root;
+  margin-inline-start: 0.3em;
+}
+
+.external-link-label {
+  @util hide-visually;
+}

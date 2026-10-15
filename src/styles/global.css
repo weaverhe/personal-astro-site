@@ -181,7 +181,7 @@
   --panels: var(--apricot);
   --brand: var(--peach);
   --brand-tint: var(--blush);
-  --raised: var(---white);
+  --raised: var(--white);
   --page: var(--cream);
 
   /* animations */
@@ -194,15 +194,6 @@
   --stroke-bold: 3px;
   --stroke-fine: 2px;
 
-  /* shadows */
-  --shadow-xs: 2px 2px 0 var(--ink);
-  --shadow-sm: 3px 3px 0 var(--ink);
-  --shadow-md: 5px 5px 0 var(--ink);
-  --shadow-lg: 8px 8px 0 var(--ink);
-  --shadow-xl: 12px 12px 0 var(--ink);
-  --shadow-accent: 5px 5px 0 var(--pink);
-  --shadow-accent-lg: 8px 8px 0 var(--pink);
-
   /* radii */
   --radius-sm: 6px;
   --radius-input: 14px;
@@ -213,16 +204,20 @@
   --radius-arch: var(--radius-pill) var(--radius-pill) 0 0;
 }
 
+*,
+*::before,
+*::after {
+  /* shadows */
+  --shadow-xs: 2px 2px 0 var(--shadow-color, var(--ink));
+  --shadow-sm: 3px 3px 0 var(--shadow-color, var(--ink));
+  --shadow-md: 5px 5px 0 var(--shadow-color, var(--ink));
+  --shadow-lg: 8px 8px 0 var(--shadow-color, var(--ink));
+  --shadow-xl: 12px 12px 0 var(--shadow-color, var(--ink));
+}
+
 /* a11y */
 :where(a, button, input, textarea, summary, [tabindex]):focus-visible {
-  border-radius: var(--radius-sm);
-
-  background-color: var(--blush);
-  outline: var(--stroke-bold) solid var(--ink);
-  outline-offset: 3px;
-  box-shadow: 0 0 0 6px var(--blush);
-
-  transition: var(--quick-ui-change);
+  outline: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

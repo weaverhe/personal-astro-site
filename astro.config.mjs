@@ -10,14 +10,16 @@ export default defineConfig({
       name: "Archivo",
       cssVariable: "--font-display",
       options: {
-        variants: [{
-          src: ["./src/assets/fonts/headings.woff2"],
-          weight: "800 900",
-          style: "normal",
-          display: "swap",
-          stretch: "110% 125%"
-        }]
-      }
+        variants: [
+          {
+            src: ["./src/assets/fonts/headings.woff2"],
+            weight: "800 900",
+            style: "normal",
+            display: "swap",
+            stretch: "110% 125%",
+          },
+        ],
+      },
     },
     {
       provider: fontProviders.local(),
@@ -49,21 +51,23 @@ export default defineConfig({
             style: "italic",
             display: "swap",
           },
-        ]
-      }
+        ],
+      },
     },
     {
       provider: fontProviders.local(),
       name: "JetBrains Mono",
       cssVariable: "--font-mono",
       options: {
-        variants: [{
-          src: ["./src/assets/fonts/mono.ttf"],
-          weight: "100 800",
-          style: "normal",
-          display: "swap",
-        }]
-      }
+        variants: [
+          {
+            src: ["./src/assets/fonts/mono.ttf"],
+            weight: "100 800",
+            style: "normal",
+            display: "swap",
+          },
+        ],
+      },
     },
-  ]
+  ],
 });

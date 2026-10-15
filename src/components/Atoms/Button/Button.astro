@@ -1,0 +1,51 @@
+---
+import type {Polymorphic} from "astro/types";
+import styles from "./Button.module.css";
+
+type ButtonTag = "a" | "button";
+
+/**
+ * A button component that can act as a link or button.
+ */
+type Props<Tag extends ButtonTag = ButtonTag> = Polymorphic<{as: Tag}> & {
+  /**
+   * The HTML element to render.
+   */
+  as?: Tag;
+  /**
+   * The color button to display.
+   */
+  color?: "white" | "pink" | "ink";
+  glyph?: "external-link" | "right-arrow";
+  disabled?: boolean;
+  size?: "large" | "standard";
+};
+
+const {
+  as: Element = "button" as any,
+  glyph,
+  color = "white",
+  size = "standard",
+  disabled = false,
+  ...rest
+} = Astro.props;
+---
+
+<Element
+  class:list={[styles.button, styles[color], styles[size]]}
+  disabled={disabled}
+  {...rest}
+>
+  <slot />
+  {glyph && (
+    <span class={styles["glyph-container"]}>
+      <span class={styles[glyph]} aria-hidden="true">
+        {glyph === "external-link" && "↗"}
+        {glyph === "right-arrow" && "⟶"}
+      </span>
+      {glyph === "external-link" && (
+        <span class={styles["external-link-label"]}> (external site) </span>
+      )}
+    </span>
+  )}
+</Element>
