@@ -1,4 +1,5 @@
 import "../src/styles/global.css";
+import "./fonts.css"; // eslint-disable-line import-x/no-unassigned-import
 
 // eslint-disable-next-line unicorn/no-top-level-side-effects -- Storybook-astro doesn't ship frontmatter CSS imports to the browser in dev so we have to import them directly
 import.meta.glob("../src/components/**/*.module.css", {eager: true});

@@ -145,62 +145,6 @@
   }
 }
 
-/* Font families */
-@font-face {
-  font-family: Archivo;
-  font-weight: 800 900;
-  font-style: normal;
-
-  font-display: swap;
-  font-stretch: 110% 125%;
-  src: url("/fonts/headings.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Atkinson Hyperlegible";
-  font-weight: 100 900;
-  font-style: normal;
-
-  font-display: swap;
-  src: url("/fonts/body.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Atkinson Hyperlegible";
-  font-weight: 400;
-  font-style: italic;
-
-  font-display: swap;
-  src: url("/fonts/body-italic.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Atkinson Hyperlegible";
-  font-weight: 700;
-  font-style: normal;
-
-  font-display: swap;
-  src: url("/fonts/body-bold.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Atkinson Hyperlegible";
-  font-weight: 700;
-  font-style: italic;
-
-  font-display: swap;
-  src: url("/fonts/body-bold-italic.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "JetBrains Mono";
-  font-weight: 100 800;
-  font-style: normal;
-
-  font-display: swap;
-  src: url("/fonts/mono.ttf") format("truetype");
-}
-
 /* animation keyframes */
 @keyframes full-spin {
   100% {
@@ -239,12 +183,6 @@
   --brand-tint: var(--blush);
   --raised: var(---white);
   --page: var(--cream);
-
-  /* fonts */
-  --font-display: "Archivo", "Arial Black", sans-serif;
-  --font-heading: var(--font-display);
-  --font-body: "Atkinson Hyperlegible", verdana, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
   /* animations */
   --slow-spin: full-spin 30s linear infinite;

@@ -1,0 +1,62 @@
+@font-face {
+  font-family: Archivo;
+  font-weight: 800 900;
+  font-style: normal;
+
+  font-display: swap;
+
+  font-stretch: 110% 125%;
+
+  src: url("../src/assets/fonts/headings.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  font-weight: 400;
+  font-style: normal;
+
+  font-display: swap;
+  src: url("../src/assets/fonts/body.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  font-weight: 400;
+  font-style: italic;
+
+  font-display: swap;
+  src: url("../src/assets/fonts/body-italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  font-weight: 700;
+  font-style: normal;
+
+  font-display: swap;
+  src: url("../src/assets/fonts/body-bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  font-weight: 700;
+  font-style: italic;
+
+  font-display: swap;
+  src: url("../src/assets/fonts/body-bold-italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-weight: 100 800;
+  font-style: normal;
+
+  font-display: swap;
+  src: url("../src/assets/fonts/mono.ttf") format("truetype");
+}
+
+:root {
+  --font-display: "Archivo", "Arial Black", sans-serif;
+  --font-body: "Atkinson Hyperlegible", verdana, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
