@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Text from "../components/Atoms/Text/Text.astro";
 ---
 
 <html lang="en">
@@ -10,8 +11,8 @@ import "../styles/global.css";
     <title>Heather's Site</title>
   </head>
   <body>
-    <h1>Heather's Site</h1>
-    <p>testing body</p>
-    <code>testing mono</code>
+    <Text as="h1" variant="display" data-test="testing">
+      Heather's Site
+    </Text>
   </body>
 </html>

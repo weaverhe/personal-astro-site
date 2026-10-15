@@ -1,0 +1,339 @@
+.display {
+  font-family: var(--font-display);
+  font-size: 3.25rem;
+  font-weight: 900;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+
+  font-stretch: 125%;
+
+  @media screen and (width >= 768px) {
+    font-size: 7.5rem;
+  }
+}
+
+.h1 {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 900;
+  line-height: 0.96;
+  letter-spacing: -0.02em;
+
+  font-stretch: 125%;
+
+  @media screen and (width >= 768px) {
+    font-size: 5.5rem;
+  }
+}
+
+.h2 {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.02em;
+
+  font-stretch: 125%;
+
+  @media screen and (width >= 768px) {
+    font-size: 2.75rem;
+  }
+}
+
+.h3 {
+  font-family: var(--font-heading);
+  font-size: 1.625rem;
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+
+  font-stretch: 125%;
+
+  @media screen and (width >= 768px) {
+    font-size: 2.25rem;
+  }
+}
+
+.h4 {
+  font-family: var(--font-heading);
+  font-size: 1.375rem;
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+
+  font-stretch: 125%;
+
+  @media screen and (width >= 768px) {
+    font-size: 1.75rem;
+  }
+}
+
+.h5 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.2;
+
+  font-stretch: 125%;
+
+  @media screen and (width >= 768px) {
+    font-size: 1.4375rem;
+  }
+}
+
+.lede {
+  font-family: var(--font-body);
+  font-size: 1.1875rem;
+  font-weight: 400;
+  line-height: 1.6;
+
+  @media screen and (width >= 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+.prose {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.7;
+
+  @media screen and (width >= 768px) {
+    font-size: 1.1875rem;
+  }
+}
+
+.body {
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.65;
+
+  @media screen and (width >= 768px) {
+    font-size: 1.125rem;
+  }
+}
+
+.body-small {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.caption {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.ui {
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 800;
+  line-height: 1.2;
+
+  font-stretch: 112%;
+
+  @media screen and (width >= 768px) {
+    font-size: 1.0625rem;
+  }
+}
+
+.kicker {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+
+  @media screen and (width >= 768px) {
+    font-size: 0.875rem;
+  }
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.05em;
+
+  @media screen and (width >= 768px) {
+    font-size: 0.8125rem;
+  }
+}
+
+.code {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.7;
+
+  &:not(pre &) {
+    padding: 0 6px;
+    border: var(--stroke-fine) solid var(--ink);
+    border-radius: var(--radius-sm);
+    background-color: var(--peach);
+  }
+
+  @media screen and (width >= 768px) {
+    font-size: 0.9375rem;
+  }
+}
+
+.link,
+.external-link {
+  padding: 0 2px;
+  border-block-end: var(--stroke-fine) solid var(--ink);
+
+  font-family: var(--font-body);
+  font-weight: 700;
+  color: inherit;
+  text-decoration: none;
+
+  box-decoration-break: clone;
+  box-shadow: inset 0 -4px 0 var(--pink);
+
+  &:hover,
+  &:focus-visible {
+    border-radius: var(--radius-sm);
+    background: var(--salmon);
+    box-shadow: var(--shadow-sm);
+  }
+
+  &:active {
+    border-radius: var(--radius-sm);
+    background: var(--salmon);
+    box-shadow: var(--shadow-xs);
+  }
+}
+
+.external-link-arrow {
+  display: inline flow-root;
+  margin-inline-start: 0.3em;
+  font-family: var(--font-mono);
+  font-weight: 900;
+}
+
+.external-link-arrow-glyph {
+  transform: translateY(0.1em);
+  display: inline flow-root;
+  transition: var(--quick-ui-change);
+}
+
+.external-link-label {
+  @util hide-visually;
+}
+
+.external-link {
+  &:hover,
+  &:active,
+  &:focus-visible {
+    .external-link-arrow-glyph {
+      transform: translateY(-0.1em);
+    }
+  }
+}
+
+.ink {
+  color: var(--ink);
+}
+
+.gray {
+  color: var(--gray);
+}
+
+.cream {
+  color: var(--cream);
+}
+
+.peach {
+  color: var(--peach);
+}
+
+.apricot {
+  color: var(--apricot);
+}
+
+.salmon {
+  color: var(--salmon);
+}
+
+.text {
+  color: var(--text);
+}
+
+.secondary-text {
+  color: var(--secondary-text);
+}
+
+.page {
+  color: var(--page);
+}
+
+.marks {
+  color: var(--marks);
+}
+
+.brand {
+  color: var(--brand);
+}
+
+@custom-selector :--body-variants .lede, .prose, .body, .body-small, .caption;
+
+.bold:is(:--body-variants) {
+  font-weight: 700;
+}
+
+.italic:is(:--body-variants) {
+  font-style: italic;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+.overline {
+  text-decoration: overline;
+}
+
+.highlight {
+  padding: 0 0.06em;
+  background-image: linear-gradient(
+    transparent 58%,
+    var(--highlight-color) 58%,
+    var(--highlight-color) 92%,
+    transparent 92%
+  );
+  box-decoration-break: clone;
+}
+
+.highlight-peach {
+  --highlight-color: var(--peach);
+}
+
+.highlight-cream {
+  --highlight-color: var(--cream);
+}
+
+.highlight-apricot {
+  --highlight-color: var(--apricot);
+}
+
+.highlight-salmon {
+  --highlight-color: var(--salmon);
+}
+
+.highlight-lilac {
+  --highlight-color: var(--lilac);
+}

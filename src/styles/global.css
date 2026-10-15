@@ -103,6 +103,7 @@
   --slow-spin: full-spin 30s linear infinite;
   --badge-ring: full-spin 24s linear infinite;
   --blink: blink 1.6s ease-in-out infinite;
+  --quick-ui-change: all 0.1s ease;
 
   /* strokes */
   --stroke-bold: 3px;
@@ -117,17 +118,36 @@
   --shadow-accent: 5px 5px 0 var(--pink);
   --shadow-accent-lg: 8px 8px 0 var(--pink);
 
-  /* a11y */
-  --focus-ring: 0 0 0 3px var(--cream), 0 0 0 6px var(--ink);
+  /* radii */
+  --radius-sm: 6px;
+  --radius-input: 14px;
+  --radius-md: 18px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+  --radius-arch: var(--radius-pill) var(--radius-pill) 0 0;
 }
 
 /* a11y */
 :where(a, button, input, textarea, summary, [tabindex]):focus-visible {
-  outline: 2px solid transparent;
-  box-shadow: var(--focus-ring);
+  border-radius: var(--radius-sm);
+
+  background-color: var(--blush);
+  outline: var(--stroke-bold) solid var(--ink);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px var(--blush);
+
+  transition: var(--quick-ui-change);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
 }
 
 /* typography */
 body {
   font-size: 16px;
+  color: var(--text);
 }

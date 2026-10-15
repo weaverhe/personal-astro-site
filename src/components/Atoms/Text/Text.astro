@@ -1,0 +1,145 @@
+---
+import type {Polymorphic} from "astro/types";
+import styles from "./Text.module.css";
+
+type TextTag =
+  | "h1"
+  | "h2"
+  | "h3"
+  | "h4"
+  | "h5"
+  | "h6"
+  | "p"
+  | "code"
+  | "span"
+  | "label"
+  | "li"
+  | "figcaption"
+  | "a";
+
+/**
+ * A highly flexible text component
+ */
+type Props<Tag extends TextTag = TextTag> = Polymorphic<{as: Tag}> & {
+  /**
+   * The HTML element to render.
+   */
+  as?: Tag;
+  /**
+   * The visual variant to apply.
+   * Sensible defaults applied based on selected element.
+   */
+  variant?:
+    | "display"
+    | "h1"
+    | "h2"
+    | "h3"
+    | "h4"
+    | "h5"
+    | "lede"
+    | "prose"
+    | "body"
+    | "body-small"
+    | "caption"
+    | "ui"
+    | "kicker"
+    | "label"
+    | "code"
+    | "link"
+    | "external-link";
+  /**
+   * The text color to apply.
+   * Inherits from parent element if not provided.
+   */
+  color?:
+    | "ink"
+    | "gray"
+    | "cream"
+    | "peach"
+    | "apricot"
+    | "salmon"
+    | "text"
+    | "secondary-text"
+    | "page"
+    | "marks"
+    | "brand";
+  /**
+   * Text decoration to apply to the text.
+   * None is applied if not provided.
+   */
+  textDecoration?: "underline" | "line-through" | "overline";
+  /**
+   * Whether the text should be bold.
+   * Only applies to elements which use the body font.
+   */
+  bold?: boolean;
+  /**
+   * Whether the text should be uppercase
+   */
+  uppercase?: boolean;
+  /**
+   * Whether the text should be italic
+   * Only applies to elements which use the body font.
+   */
+  italic?: boolean;
+  /**
+   * If provided, applies a decorative partial highlight in the given color.
+   */
+  highlight?: "peach" | "cream" | "apricot" | "salmon" | "lilac";
+};
+
+type As = NonNullable<Props<TextTag>["as"]>;
+type Variant = NonNullable<Props<TextTag>["variant"]>;
+
+const DEFAULT_VARIANTS: Record<As, Variant> = {
+  h1: "h1",
+  h2: "h2",
+  h3: "h3",
+  h4: "h4",
+  h5: "h5",
+  h6: "h5",
+  p: "body",
+  span: "body",
+  code: "code",
+  label: "label",
+  li: "body",
+  figcaption: "caption",
+  a: "link",
+};
+
+const {
+  as: Element = "p",
+  color,
+  textDecoration,
+  bold,
+  uppercase,
+  italic,
+  highlight,
+  variant = DEFAULT_VARIANTS[Element],
+  ...rest
+} = Astro.props;
+---
+
+<Element
+  class:list={[
+    styles[variant],
+    color && styles[color],
+    bold && styles.bold,
+    uppercase && styles.uppercase,
+    italic && styles.italic,
+    textDecoration && styles[textDecoration],
+    highlight && styles.highlight,
+    highlight && styles[`highlight-${highlight}`],
+  ]}
+  {...rest}
+>
+  <slot />
+  {variant === "external-link" && (
+    <>
+      <span class={styles["external-link-arrow"]} aria-hidden="true">
+        <span class={styles["external-link-arrow-glyph"]}>↗</span>
+      </span>
+      <span class={styles["external-link-label"]}> (external site) </span>
+    </>
+  )}
+</Element>

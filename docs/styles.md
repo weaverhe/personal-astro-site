@@ -16,7 +16,7 @@
 | `--gray`    | `--peach`        | 5.9:1    |
 | `--gray`    | `--apricot`      | 5.3:1    |
 | `--gray`    | `--salmon`       | 4.5:1    |
-| `--paper`   | `--ink`          | 16.1:1   |
+| `--cream`   | `--ink`          | 16.1:1   |
 | `--peach`   | `--ink`          | 12.0:1   |
 | `--apricot` | `--ink`          | 10.7:1   |
 | `--salmon`  | `--ink`          | 9.2:1    |
