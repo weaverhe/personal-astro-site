@@ -20,5 +20,6 @@ export default {
     "at-rule-no-unknown": [true, {ignoreAtRules: ["util"]}],
     // CSS Modules `composes` values reference class names that may be camelCase
     "value-keyword-case": ["lower", {ignoreProperties: ["composes"]}],
+    "at-rule-prelude-no-invalid": [true, {ignoreAtRules: ["custom-selector"]}],
   },
 };
