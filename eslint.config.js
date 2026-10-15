@@ -25,4 +25,13 @@ export default defineConfig([
       ],
     },
   },
+  {
+    files: ["**/*.{js,jsx,ts,tsx,astro}"],
+    rules: {
+      // Prefer standard asterisk-prefixed JSDoc over XO's asterisk-free style
+      "jsdoc/require-asterisk-prefix": ["error", "always"],
+      "unicorn/no-asterisk-prefix-in-documentation-comments": "off",
+      "jsdoc/check-alignment": "error",
+    },
+  },
 ]);
