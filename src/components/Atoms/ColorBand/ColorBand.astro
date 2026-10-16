@@ -1,0 +1,40 @@
+---
+import styles from "./ColorBand.module.css";
+/**
+ * A band of themed colors.
+ * Used as a decorative or accent element.
+ */
+type Props = {
+  /**
+   * The height of the color band.
+   */
+  height?: "small" | "medium" | "large";
+  /**
+   * Whether to show a bottom border.
+   */
+  borderBottom?: boolean;
+  /**
+   * Whether to show a top border.
+   */
+  borderTop?: boolean;
+};
+
+const {height = "medium", borderBottom, borderTop, ...rest} = Astro.props;
+---
+
+<div
+  class:list={[
+    styles.band,
+    styles[height],
+    borderBottom && styles.borderBottom,
+    borderTop && styles.borderTop,
+  ]}
+  {...rest}
+  aria-hidden="true"
+>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
