@@ -187,7 +187,7 @@
   /* animations */
   --slow-spin: full-spin 30s linear infinite;
   --badge-ring: full-spin 24s linear infinite;
-  --blink: blink 1.6s ease-in-out infinite;
+  --blink: blink 1s steps(1, start) infinite;
   --quick-ui-change: all 0.1s ease;
 
   /* strokes */

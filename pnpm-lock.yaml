@@ -87,6 +87,9 @@ importers:
       stylelint-order:
         specifier: ^8.1.2
         version: 8.1.2(stylelint@17.16.0(typescript@6.0.3))
+      svgo:
+        specifier: ^4.1.0
+        version: 4.1.0
       typescript:
         specifier: ^6.0.3
         version: 6.0.3

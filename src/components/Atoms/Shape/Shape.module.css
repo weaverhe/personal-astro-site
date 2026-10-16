@@ -1,0 +1,68 @@
+.shape {
+  rotate: var(--rotation, 0deg);
+}
+
+.cream {
+  color: var(--cream);
+}
+
+.white {
+  color: var(--white);
+}
+
+.blush {
+  color: var(--blush);
+}
+
+.peach {
+  color: var(--peach);
+}
+
+.apricot {
+  color: var(--apricot);
+}
+
+.salmon {
+  color: var(--salmon);
+}
+
+.lilac {
+  color: var(--lilac);
+}
+
+.pink {
+  color: var(--pink);
+}
+
+.extra-small {
+  inline-size: 25px;
+  block-size: 25px;
+}
+
+.small {
+  inline-size: 50px;
+  block-size: 50px;
+}
+
+.medium {
+  inline-size: 100px;
+  block-size: 100px;
+}
+
+.large {
+  inline-size: 150px;
+  block-size: 150px;
+}
+
+.extra-large {
+  inline-size: 200px;
+  block-size: 200px;
+}
+
+.slow-spin {
+  animation: var(--slow-spin);
+}
+
+.blink {
+  animation: var(--blink);
+}

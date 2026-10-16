@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 101 101">
+  <defs>
+    <mask id="shape--egg_svg__a" width="102.916" height="103.009" x="-.958" y="-1.005" color-interpolation="sRGB" maskUnits="userSpaceOnUse">
+      <path fill="#fff" d="M22.453 22.544C43.595 1.334 73.29-3.343 88.78 12.096s10.908 45.15-10.233 66.36C57.405 99.666 27.71 104.343 12.22 88.904s-10.908-45.15 10.233-66.36"/>
+    </mask>
+  </defs>
+  <g data-name="Layer 1">
+    <path d="M22.453 22.544C43.595 1.334 73.29-3.343 88.78 12.096s10.908 45.15-10.233 66.36C57.405 99.666 27.71 104.343 12.22 88.904s-10.908-45.15 10.233-66.36" fill="currentColor"/>
+    <path d="M22.453 22.544C43.595 1.334 73.29-3.343 88.78 12.096s10.908 45.15-10.233 66.36C57.405 99.666 27.71 104.343 12.22 88.904s-10.908-45.15 10.233-66.36" mask="url(#shape--egg_svg__a)" fill="none" stroke="#2b1a1e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

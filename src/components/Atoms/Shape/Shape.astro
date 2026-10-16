@@ -1,0 +1,66 @@
+---
+import type {SvgComponent} from "astro/types";
+import type {
+  ShapeAnimation,
+  ShapeColor,
+  ShapeName,
+  ShapeSize,
+} from "./Shape.constants.ts";
+import styles from "./Shape.module.css";
+
+const svgs = import.meta.glob<{default: SvgComponent}>(
+  "../../../assets/shapes/*.svg",
+  {eager: true},
+);
+
+/**
+ * Displays a variety of fun, decorative shapes
+ * in different sizes and colors. Animations optional.
+ */
+type Props = {
+  /**
+   * The name of the shape.
+   */
+  shape: ShapeName;
+  /**
+   * The color of the shape.
+   */
+  color?: ShapeColor;
+  /**
+   * The size of the shape.
+   */
+  size?: ShapeSize;
+  /**
+   * The animation of the shape.
+   */
+  animation?: ShapeAnimation;
+  /**
+   * The rotation of the shape in degrees.
+   */
+  rotation?: number;
+};
+
+const {
+  shape,
+  color = "cream",
+  size = "medium",
+  animation,
+  rotation,
+  ...rest
+} = Astro.props;
+const Svg = svgs[`../../../assets/shapes/${shape}.svg`]?.default;
+---
+
+{Svg && (
+  <Svg
+    class:list={[
+      styles.shape,
+      styles[color],
+      styles[size],
+      animation && styles[animation],
+    ]}
+    style={rotation ? {"--rotation": `${rotation}deg`} : undefined}
+    aria-hidden="true"
+    {...rest}
+  />
+)}
