@@ -4,15 +4,15 @@
 
 | Text Color  | Background Color | Contrast |
 | ----------- | ---------------- | -------- |
-| `--ink`     | `--ground`       | 15.3:1   |
-| `--ink`     | `--paper`        | 16.1:1   |
+| `--ink`     | `--cream`        | 15.3:1   |
+| `--ink`     | `--white`        | 16.1:1   |
 | `--ink`     | `--peach`        | 12.0:1   |
 | `--ink`     | `--apricot`      | 10.7:1   |
 | `--ink`     | `--salmon`       | 9.2:1    |
 | `--ink`     | `--lilac`        | 8.9:1    |
 | `--ink`     | `--pink`         | 5.9:1    |
 | `--gray`    | `--ground`       | 7.6:1    |
-| `--gray`    | `--paper`        | 7.9:1    |
+| `--gray`    | `--white`        | 7.9:1    |
 | `--gray`    | `--peach`        | 5.9:1    |
 | `--gray`    | `--apricot`      | 5.3:1    |
 | `--gray`    | `--salmon`       | 4.5:1    |
