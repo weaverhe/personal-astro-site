@@ -1,0 +1,89 @@
+.sticker {
+  position: relative;
+  display: inline flow-root;
+  border: var(--stroke-bold) solid var(--ink);
+}
+
+.small {
+  padding: 5px 8px 7px;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-xs);
+
+  @media screen and (width >= 768px) {
+    padding: 8px 12px 10px;
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+.medium {
+  padding: 10px 16px 12px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+
+  @media screen and (width >= 768px) {
+    padding: 12px 20px 14px;
+    box-shadow: var(--shadow-md);
+  }
+}
+
+.large {
+  padding: 12px 20px 14px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+
+  @media screen and (width >= 768px) {
+    padding: 14px 24px 16px;
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+.pill {
+  border-radius: var(--radius-pill);
+}
+
+.cream {
+  background-color: var(--cream);
+}
+
+.white {
+  background-color: var(--white);
+}
+
+.blush {
+  background-color: var(--blush);
+}
+
+.peach {
+  background-color: var(--peach);
+}
+
+.apricot {
+  background-color: var(--apricot);
+}
+
+.salmon {
+  background-color: var(--salmon);
+}
+
+.lilac {
+  background-color: var(--lilac);
+}
+
+.pink {
+  background-color: var(--pink);
+}
+
+.left {
+  transform: rotate(-2deg);
+}
+
+.right {
+  transform: rotate(2deg);
+}
+
+.shapeContainer {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  transform: translate(40%, -40%);
+}

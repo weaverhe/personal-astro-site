@@ -1,0 +1,87 @@
+---
+import type {
+  ShapeName,
+  ShapeColor,
+  ShapeAnimation,
+} from "../Shape/Shape.constants.ts";
+import Shape from "../Shape/Shape.astro";
+import styles from "./StickerLabel.module.css";
+/**
+ * A sticker label component featuring text,
+ * and an optional sticker element.
+ */
+type Props = {
+  /**
+   * The size of the label.
+   */
+  size?: "small" | "medium" | "large";
+  /**
+   * The background color of the label.
+   * Text, shadow, and border is always ink.
+   */
+  color?:
+    | "cream"
+    | "white"
+    | "blush"
+    | "peach"
+    | "apricot"
+    | "salmon"
+    | "lilac"
+    | "pink";
+  /**
+   * The shape of the label.
+   */
+  corners?: "rectangle" | "pill";
+  /**
+   * The direction the sticker tilts.
+   */
+  tilt?: "left" | "right";
+  /**
+   * The shape to display atop the sticker
+   */
+  shape?: ShapeName;
+  /**
+   * The color of the accent shape.
+   */
+  shapeColor?: ShapeColor;
+  /**
+   * The animation to apply to the accent shape.
+   */
+  shapeAnimation?: ShapeAnimation;
+};
+
+const {
+  size = "medium",
+  color = "peach",
+  corners = "rectangle",
+  tilt = "left",
+  shape,
+  shapeColor,
+  shapeAnimation,
+  ...rest
+} = Astro.props;
+---
+
+<div
+  class:list={[
+    styles.sticker,
+    styles[size],
+    styles[color],
+    styles[corners],
+    styles[tilt],
+  ]}
+  {...rest}
+  aria-hidden="true"
+>
+  <slot />
+  {shape && (
+    <div class={styles.shapeContainer}>
+      <Shape
+        shape={shape}
+        color={shapeColor}
+        animation={shapeAnimation}
+        size="small"
+      />
+    </div>
+  )}
+</div>
