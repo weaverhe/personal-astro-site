@@ -5,7 +5,7 @@ export default {
       name: "preset-default",
       params: {
         overrides: {
-          inlineStyles: { onlyMatchedOnce: false },
+          inlineStyles: {onlyMatchedOnce: false},
         },
       },
     },
