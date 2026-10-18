@@ -1,25 +1,13 @@
 ---
-import {Font} from "astro:assets";
-import "../styles/global.css";
+import BaseLayout from "../components/Layouts/BaseLayout.astro";
 import Text from "../components/Atoms/Text/Text.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Heather's Site</title>
-    <Font cssVariable="--font-display" />
-    <Font cssVariable="--font-body" />
-    <Font cssVariable="--font-mono" />
-  </head>
-  <body>
-    <Text as="h1" variant="display" data-test="testing">
-      Heather's Site
-    </Text>
-    <Text>Body text!!!</Text>
-    <Text bold>Body text!!!</Text>
-    <Text as="code">useEvent();</Text>
-  </body>
-</html>
+<BaseLayout title="Heather's Site">
+  <Text as="h1" variant="display" data-test="testing">
+    Heather's Site
+  </Text>
+  <Text>Body text!!!</Text>
+  <Text bold>Body text!!!</Text>
+  <Text as="code">useEvent();</Text>
+</BaseLayout>
