@@ -251,4 +251,12 @@
 body {
   font-size: 16px;
   color: var(--text);
+
+  background-color: var(--cream);
+  background-image: radial-gradient(
+    oklch(24.14% 0.0278 3.95deg / 13%) 1.1px,
+    transparent 1.5px
+  );
+  background-repeat: repeat;
+  background-size: 22px 22px;
 }
