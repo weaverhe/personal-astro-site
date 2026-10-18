@@ -1,5 +1,16 @@
 ---
 import ColorBand from "../../Atoms/ColorBand/ColorBand.astro";
+import StickerLabel from "../../Atoms/StickerLabel/StickerLabel.astro";
+import Text from "../../Atoms/Text/Text.astro";
+import styles from "./Header.module.css";
 ---
 
 <ColorBand borderBottom height="large" />
+<header class:list={[styles.header]}>
+  <!-- skip to content button -->
+  <StickerLabel corners="pill" as="a" href="/">
+    <Text as="span" variant="h4">
+      heather weaver
+    </Text>
+  </StickerLabel>
+</header>
