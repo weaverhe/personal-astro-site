@@ -1,3 +1,7 @@
+import type {LightColor} from "../../../constants/colors.ts";
+
+export {lightColors as colors} from "../../../constants/colors.ts";
+
 export const shapes = [
   "aster",
   "bell-flower",
@@ -41,17 +45,6 @@ export const shapes = [
   "whirl",
 ] as const;
 
-export const colors = [
-  "cream",
-  "white",
-  "blush",
-  "peach",
-  "apricot",
-  "salmon",
-  "lilac",
-  "pink",
-] as const;
-
 export const sizes = [
   "extra-small",
   "small",
@@ -63,6 +56,6 @@ export const sizes = [
 export const animations = ["slow-spin", "blink"] as const;
 
 export type ShapeName = (typeof shapes)[number];
-export type ShapeColor = (typeof colors)[number];
+export type ShapeColor = LightColor;
 export type ShapeSize = (typeof sizes)[number];
 export type ShapeAnimation = (typeof animations)[number];

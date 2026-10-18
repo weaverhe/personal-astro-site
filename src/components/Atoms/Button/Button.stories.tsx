@@ -25,12 +25,12 @@ export const ColorVariations = {
         as: "h2",
         variant: "h5",
       },
-      slots: {default: "Cream"},
+      slots: {default: "White"},
     },
     {
       component: Button,
       props: {
-        color: "cream",
+        color: "white",
       },
       slots: {default: "Click me"},
     },
@@ -100,7 +100,7 @@ export const Glyphs = {
     {
       component: Button,
       props: {
-        color: "cream",
+        color: "white",
         glyph: "right-arrow",
       },
       slots: {default: "Click me"},

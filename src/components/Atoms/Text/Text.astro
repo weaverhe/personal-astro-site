@@ -1,5 +1,6 @@
 ---
 import type {Polymorphic} from "astro/types";
+import type {AliasColor, PaletteColor} from "../../../constants/colors.ts";
 import styles from "./Text.module.css";
 
 type TextTag =
@@ -52,17 +53,14 @@ type Props<Tag extends TextTag = TextTag> = Polymorphic<{as: Tag}> & {
    * Inherits from parent element if not provided.
    */
   color?:
-    | "ink"
-    | "gray"
-    | "cream"
-    | "peach"
-    | "apricot"
-    | "salmon"
-    | "text"
-    | "secondary-text"
-    | "page"
-    | "marks"
-    | "brand";
+    | Extract<
+        PaletteColor,
+        "ink" | "gray" | "cream" | "peach" | "apricot" | "salmon"
+      >
+    | Extract<
+        AliasColor,
+        "text" | "secondary-text" | "page" | "marks" | "brand"
+      >;
   /**
    * Text decoration to apply to the text.
    * None is applied if not provided.
@@ -85,7 +83,10 @@ type Props<Tag extends TextTag = TextTag> = Polymorphic<{as: Tag}> & {
   /**
    * If provided, applies a decorative partial highlight in the given color.
    */
-  highlight?: "peach" | "cream" | "apricot" | "salmon" | "lilac";
+  highlight?: Extract<
+    PaletteColor,
+    "peach" | "cream" | "apricot" | "salmon" | "lilac"
+  >;
 };
 
 type As = NonNullable<Props<TextTag>["as"]>;

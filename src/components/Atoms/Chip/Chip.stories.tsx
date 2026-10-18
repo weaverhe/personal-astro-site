@@ -1,3 +1,4 @@
+import {paletteColors} from "../../../constants/colors.ts";
 import Chip from "./Chip.astro";
 
 const meta = {
@@ -36,25 +37,14 @@ const tags = [
   "WCAG",
   "Animation",
 ];
-const colors = [
-  "cream",
-  "white",
-  "blush",
-  "apricot",
-  "peach",
-  "salmon",
-  "pink",
-  "lilac",
-  "gray",
-  "ink",
-];
 const borderTypes = ["solid", "dashed", "dotted"];
 
 export const TagCloud = {
   render: () => [
     "<div class='spaced-flex-wrap'>",
     ...tags.map((tag) => {
-      const color = colors[Math.floor(Math.random() * colors.length)];
+      const color =
+        paletteColors[Math.floor(Math.random() * paletteColors.length)];
       const border =
         borderTypes[Math.floor(Math.random() * borderTypes.length)];
 

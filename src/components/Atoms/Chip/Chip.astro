@@ -1,5 +1,6 @@
 ---
 import type {Polymorphic} from "astro/types";
+import {isDarkColor, type PaletteColor} from "../../../constants/colors.ts";
 import Text from "../Text/Text.astro";
 import styles from "./Chip.module.css";
 
@@ -21,17 +22,7 @@ type Props<Tag extends ChipTag = ChipTag> = Polymorphic<{as: Tag}> & {
    * The background color of the chip.
    * Text color is set automatically based on the background color.
    */
-  backgroundColor?:
-    | "cream"
-    | "white"
-    | "blush"
-    | "apricot"
-    | "peach"
-    | "salmon"
-    | "pink"
-    | "lilac"
-    | "gray"
-    | "ink";
+  backgroundColor?: PaletteColor;
   /**
    * Whether to add a box shadow.
    */
@@ -51,17 +42,7 @@ type Props<Tag extends ChipTag = ChipTag> = Polymorphic<{as: Tag}> & {
   /**
    * The dot color, dot only displayed if color is provided.
    */
-  dotColor?:
-    | "cream"
-    | "white"
-    | "blush"
-    | "apricot"
-    | "peach"
-    | "salmon"
-    | "pink"
-    | "lilac"
-    | "gray"
-    | "ink";
+  dotColor?: PaletteColor;
   /**
    * If the dot should blink or not
    */
@@ -104,9 +85,7 @@ const {
   <Text
     as="span"
     variant={shadow ? "ui" : "kicker"}
-    color={
-      backgroundColor === "ink" || backgroundColor === "gray" ? "cream" : "ink"
-    }
+    color={isDarkColor(backgroundColor) ? "cream" : "ink"}
     uppercase={!shadow}
   >
     {label}

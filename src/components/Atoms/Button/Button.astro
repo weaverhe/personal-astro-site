@@ -1,5 +1,6 @@
 ---
 import type {Polymorphic} from "astro/types";
+import type {PaletteColor} from "../../../constants/colors.ts";
 import styles from "./Button.module.css";
 
 type ButtonTag = "a" | "button";
@@ -15,7 +16,7 @@ type Props<Tag extends ButtonTag = ButtonTag> = Polymorphic<{as: Tag}> & {
   /**
    * The color button to display.
    */
-  color?: "white" | "pink" | "ink";
+  color?: Extract<PaletteColor, "white" | "pink" | "ink">;
   glyph?: "external-link" | "right-arrow";
   disabled?: boolean;
   size?: "large" | "standard";

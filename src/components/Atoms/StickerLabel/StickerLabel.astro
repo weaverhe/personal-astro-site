@@ -1,5 +1,6 @@
 ---
 import type {HTMLAttributes} from "astro/types";
+import type {LightColor} from "../../../constants/colors.ts";
 import type {
   ShapeName,
   ShapeColor,
@@ -20,15 +21,7 @@ type Props = HTMLAttributes<"div"> & {
    * The background color of the label.
    * Text, shadow, and border is always ink.
    */
-  color?:
-    | "cream"
-    | "white"
-    | "blush"
-    | "peach"
-    | "apricot"
-    | "salmon"
-    | "lilac"
-    | "pink";
+  color?: LightColor;
   /**
    * The shape of the label.
    */
