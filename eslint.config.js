@@ -35,7 +35,7 @@ export default defineConfig([
       "@stylistic/curly-newline": [
         "error",
         {
-          multiline: true,
+          minElements: 1,
         },
       ],
     },
