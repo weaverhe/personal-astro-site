@@ -18,9 +18,10 @@
     "types": "tsc --noEmit && astro check",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "test": "vitest",
-    "test:run": "vitest run",
-    "check": "pn format && pn lint && pn lint:css && pn types && pn test:run",
+    "test": "vitest --project unit",
+    "test:routes": "astro build && vitest run --project routes",
+    "test:run": "vitest run --project unit",
+    "check": "pn format && pn lint && pn lint:css && pn types && pn test:run && pn test:routes",
     "prepare": "husky",
     "storybook": "storybook dev",
     "storybook:build": "storybook build"
