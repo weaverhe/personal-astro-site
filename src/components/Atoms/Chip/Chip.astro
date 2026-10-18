@@ -1,0 +1,113 @@
+---
+import type {Polymorphic} from "astro/types";
+import Text from "../Text/Text.astro";
+import styles from "./Chip.module.css";
+
+type ChipTag = "a" | "button" | "span" | "div";
+
+/**
+ * A chip, used for both display and interactive elements.
+ */
+type Props<Tag extends ChipTag = ChipTag> = Polymorphic<{as: Tag}> & {
+  /**
+   * The element type to render.
+   */
+  as?: Tag;
+  /**
+   * The text to show inside the chip.
+   */
+  label: string;
+  /**
+   * The background color of the chip.
+   * Text color is set automatically based on the background color.
+   */
+  backgroundColor?:
+    | "cream"
+    | "white"
+    | "blush"
+    | "apricot"
+    | "peach"
+    | "salmon"
+    | "pink"
+    | "lilac"
+    | "gray"
+    | "ink";
+  /**
+   * Whether to add a box shadow.
+   */
+  shadow?: boolean;
+  /**
+   * The style of the chip border
+   */
+  borderStyle?: "dotted" | "dashed" | "solid";
+  /**
+   * The shape of the chip.
+   */
+  shape?: "circle" | "pill";
+  /**
+   * An optional count to display inside the chip.
+   */
+  count?: number;
+  /**
+   * The dot color, dot only displayed if color is provided.
+   */
+  dotColor?:
+    | "cream"
+    | "white"
+    | "blush"
+    | "apricot"
+    | "peach"
+    | "salmon"
+    | "pink"
+    | "lilac"
+    | "gray"
+    | "ink";
+  /**
+   * If the dot should blink or not
+   */
+  dotBlink?: boolean;
+};
+
+const {
+  as: Element = "span",
+  label,
+  backgroundColor = "cream",
+  shadow,
+  borderStyle = "solid",
+  shape = "pill",
+  count,
+  dotColor,
+  dotBlink,
+  ...rest
+} = Astro.props;
+---
+
+<Element
+  class:list={[
+    styles.chip,
+    styles[backgroundColor],
+    shadow && styles.shadow,
+    styles[borderStyle],
+    styles[shape],
+  ]}
+  {...rest}
+  aria-hidden="true"
+>
+  {dotColor && (
+    <span
+      class:list={[styles.dot, styles[dotColor], dotBlink && styles.dotBlink]}
+      aria-hidden="true"
+    ></span>
+  )}
+  <Text
+    as="span"
+    variant={shadow ? "ui" : "kicker"}
+    color={
+      backgroundColor === "ink" || backgroundColor === "gray" ? "cream" : "ink"
+    }
+    uppercase={!shadow}
+  >
+    {label}
+  </Text>
+  {count && <span class={styles.count}>{count}</span>}
+</Element>

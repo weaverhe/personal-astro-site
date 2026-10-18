@@ -19,3 +19,9 @@
 
   margin: 0;
 }
+
+.spaced-flex-wrap {
+  display: block flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}

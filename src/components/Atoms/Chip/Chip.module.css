@@ -1,0 +1,126 @@
+.chip {
+  display: inline flex;
+  gap: var(--space-2);
+  align-items: center;
+  justify-content: center;
+
+  padding: 4px 10px;
+  border-color: var(--ink);
+  border-width: var(--stroke-fine);
+
+  @media screen and (width >= 768px) {
+    padding: 5px 12px;
+  }
+}
+
+.dotted {
+  border-style: dotted;
+}
+
+.dashed {
+  border-style: dashed;
+}
+
+.solid {
+  border-style: solid;
+}
+
+.circle {
+  inline-size: 40px;
+  block-size: 40px;
+  border-radius: 50%;
+}
+
+.pill {
+  border-radius: var(--radius-pill);
+}
+
+.cream {
+  background-color: var(--cream);
+}
+
+.white {
+  background-color: var(--white);
+}
+
+.blush {
+  background-color: var(--blush);
+}
+
+.peach {
+  background-color: var(--peach);
+}
+
+.apricot {
+  background-color: var(--apricot);
+}
+
+.salmon {
+  background-color: var(--salmon);
+}
+
+.lilac {
+  background-color: var(--lilac);
+}
+
+.pink {
+  background-color: var(--pink);
+}
+
+.gray {
+  background-color: var(--gray);
+}
+
+.ink {
+  background-color: var(--ink);
+}
+
+.dot {
+  inline-size: 9px;
+  block-size: 9px;
+  border: var(--stroke-fine) solid var(--ink);
+  border-radius: 50%;
+}
+
+.dotBlink {
+  animation: var(--blink);
+}
+
+.shadow {
+  padding: 8px 18px;
+  border-width: var(--stroke-bold);
+  box-shadow: var(--shadow-md);
+}
+
+.count {
+  display: inline flex;
+  align-items: center;
+  justify-content: center;
+
+  inline-size: 26px;
+  block-size: 26px;
+  margin-inline-start: 4px;
+  border: var(--stroke-fine) solid var(--ink);
+  border-radius: 50%;
+
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--ink);
+
+  background-color: var(--peach);
+}
+
+.gray,
+.ink {
+  color: var(--cream);
+
+  &.shadow {
+    box-shadow: none;
+  }
+
+  .count {
+    border-color: var(--peach);
+    background-color: var(--pink);
+  }
+}
