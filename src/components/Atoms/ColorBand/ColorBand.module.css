@@ -37,13 +37,13 @@
 }
 
 .large {
-  block-size: 20px;
+  block-size: 15px;
 }
 
 .borderBottom {
-  border-block-end: var(--stroke-fine) solid var(--ink);
+  border-block-end: var(--stroke-bold) solid var(--ink);
 }
 
 .borderTop {
-  border-block-start: var(--stroke-fine) solid var(--ink);
+  border-block-start: var(--stroke-bold) solid var(--ink);
 }
