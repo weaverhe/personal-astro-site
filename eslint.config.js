@@ -32,6 +32,12 @@ export default defineConfig([
       "jsdoc/require-asterisk-prefix": ["error", "always"],
       "unicorn/no-asterisk-prefix-in-documentation-comments": "off",
       "jsdoc/check-alignment": "error",
+      "@stylistic/curly-newline": [
+        "error",
+        {
+          multiline: true,
+        },
+      ],
     },
   },
 ]);
