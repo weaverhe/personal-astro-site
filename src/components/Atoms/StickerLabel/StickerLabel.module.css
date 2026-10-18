@@ -4,34 +4,64 @@
   border: var(--stroke-bold) solid var(--ink);
 }
 
+a.sticker {
+  color: var(--ink);
+  text-decoration: none;
+  transition: var(--quick-ui-change);
+
+  &:focus-visible,
+  &:hover {
+    translate: calc(var(--sticker-shadow) - 2px)
+      calc(var(--sticker-shadow) - 2px);
+    box-shadow: var(--shadow-xs);
+  }
+
+  &:active {
+    translate: var(--sticker-shadow) var(--sticker-shadow);
+    box-shadow: none;
+  }
+}
+
 .small {
+  --sticker-shadow: var(--shadow-offset-xs);
+
   padding: 5px 8px 7px;
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-xs);
 
   @media screen and (width >= 768px) {
+    --sticker-shadow: var(--shadow-offset-sm);
+
     padding: 8px 12px 10px;
     box-shadow: var(--shadow-sm);
   }
 }
 
 .medium {
+  --sticker-shadow: var(--shadow-offset-sm);
+
   padding: 10px 16px 12px;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
 
   @media screen and (width >= 768px) {
+    --sticker-shadow: var(--shadow-offset-md);
+
     padding: 12px 20px 14px;
     box-shadow: var(--shadow-md);
   }
 }
 
 .large {
+  --sticker-shadow: var(--shadow-offset-md);
+
   padding: 12px 20px 14px;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
 
   @media screen and (width >= 768px) {
+    --sticker-shadow: var(--shadow-offset-lg);
+
     padding: 14px 24px 16px;
     box-shadow: var(--shadow-lg);
   }

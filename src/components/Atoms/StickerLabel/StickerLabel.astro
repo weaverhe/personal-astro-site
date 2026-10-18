@@ -1,5 +1,5 @@
 ---
-import type {HTMLAttributes} from "astro/types";
+import type {Polymorphic} from "astro/types";
 import type {LightColor} from "../../../constants/colors.ts";
 import type {
   ShapeName,
@@ -8,11 +8,18 @@ import type {
 } from "../Shape/Shape.constants.ts";
 import Shape from "../Shape/Shape.astro";
 import styles from "./StickerLabel.module.css";
+
+type StickerLabelTag = "a" | "button" | "span" | "div";
+
 /**
  * A sticker label component featuring text,
  * and an optional sticker element.
  */
-type Props = HTMLAttributes<"div"> & {
+type Props<Tag extends StickerLabelTag = "div"> = Polymorphic<{as: Tag}> & {
+  /**
+   * The HTML tag to render as.
+   */
+  as?: Tag;
   /**
    * The size of the label.
    */
@@ -45,6 +52,7 @@ type Props = HTMLAttributes<"div"> & {
 };
 
 const {
+  as: Element = "div",
   size = "medium",
   color = "peach",
   corners = "rectangle",
@@ -57,7 +65,7 @@ const {
 } = Astro.props;
 ---
 
-<div
+<Element
   class:list={[
     styles.sticker,
     styles[size],
@@ -80,4 +88,4 @@ const {
       />
     </div>
   )}
-</div>
+</Element>

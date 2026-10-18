@@ -229,11 +229,21 @@
 *::before,
 *::after {
   /* shadows */
-  --shadow-xs: 2px 2px 0 var(--shadow-color, var(--ink));
-  --shadow-sm: 3px 3px 0 var(--shadow-color, var(--ink));
-  --shadow-md: 5px 5px 0 var(--shadow-color, var(--ink));
-  --shadow-lg: 8px 8px 0 var(--shadow-color, var(--ink));
-  --shadow-xl: 12px 12px 0 var(--shadow-color, var(--ink));
+  --shadow-offset-xs: 2px;
+  --shadow-xs: var(--shadow-offset-xs) var(--shadow-offset-xs) 0
+    var(--shadow-color, var(--ink));
+  --shadow-offset-sm: 3px;
+  --shadow-sm: var(--shadow-offset-sm) var(--shadow-offset-sm) 0
+    var(--shadow-color, var(--ink));
+  --shadow-offset-md: 5px;
+  --shadow-md: var(--shadow-offset-md) var(--shadow-offset-md) 0
+    var(--shadow-color, var(--ink));
+  --shadow-offset-lg: 8px;
+  --shadow-lg: var(--shadow-offset-lg) var(--shadow-offset-lg) 0
+    var(--shadow-color, var(--ink));
+  --shadow-offset-xl: 12px;
+  --shadow-xl: var(--shadow-offset-xl) var(--shadow-offset-xl) 0
+    var(--shadow-color, var(--ink));
 }
 
 /* a11y */

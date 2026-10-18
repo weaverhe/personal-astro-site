@@ -9,7 +9,19 @@ describe("StickerLabel Component", () => {
     const container = await AstroContainer.create();
     const result = await container.renderToString(StickerLabel, {});
 
+    expect(result).toContain("<div");
     expect(result).toContain(styles.sticker);
+  });
+
+  test("Renders as the correct element", async () => {
+    const container = await AstroContainer.create();
+    const result = await container.renderToString(StickerLabel, {
+      props: {
+        as: "a",
+      },
+    });
+
+    expect(result).toContain("<a");
   });
 
   test("Renders the children", async () => {

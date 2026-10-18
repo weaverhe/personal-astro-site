@@ -25,6 +25,25 @@ export const Defaults = {
   },
 };
 
+export const Link = {
+  args: {
+    as: "a",
+    href: "/",
+    slots: {
+      default: {
+        component: Text,
+        props: {
+          as: "span",
+          variant: "h4",
+        },
+        slots: {
+          default: "Sticker Label Link",
+        },
+      },
+    },
+  },
+};
+
 export const AllSizes = {
   render: () => [
     {
