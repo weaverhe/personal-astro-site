@@ -27,12 +27,13 @@ const {
   color = "white",
   size = "standard",
   disabled = false,
+  class: className,
   ...rest
 } = Astro.props;
 ---
 
 <Element
-  class:list={[styles.button, styles[color], styles[size]]}
+  class:list={[styles.button, styles[color], styles[size], className]}
   disabled={disabled}
   {...rest}
 >

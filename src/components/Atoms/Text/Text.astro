@@ -116,6 +116,7 @@ const {
   italic,
   highlight,
   variant = DEFAULT_VARIANTS[Element],
+  class: className,
   ...rest
 } = Astro.props;
 ---
@@ -130,6 +131,7 @@ const {
     textDecoration && styles[textDecoration],
     highlight && styles.highlight,
     highlight && styles[`highlight-${highlight}`],
+    className,
   ]}
   {...rest}
 >

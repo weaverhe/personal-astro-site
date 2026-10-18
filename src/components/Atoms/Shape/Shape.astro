@@ -1,5 +1,5 @@
 ---
-import type {SvgComponent} from "astro/types";
+import type {SvgComponent, HTMLAttributes} from "astro/types";
 import type {
   ShapeAnimation,
   ShapeColor,
@@ -17,7 +17,7 @@ const svgs = import.meta.glob<{default: SvgComponent}>(
  * Displays a variety of fun, decorative shapes
  * in different sizes and colors. Animations optional.
  */
-type Props = {
+type Props = HTMLAttributes<"svg"> & {
   /**
    * The name of the shape.
    */
@@ -46,6 +46,7 @@ const {
   size = "medium",
   animation,
   rotation,
+  class: className,
   ...rest
 } = Astro.props;
 const Svg = svgs[`../../../assets/shapes/${shape}.svg`]?.default;
@@ -58,6 +59,7 @@ const Svg = svgs[`../../../assets/shapes/${shape}.svg`]?.default;
       styles[color],
       styles[size],
       animation && styles[animation],
+      className,
     ]}
     style={rotation ? {"--rotation": `${rotation}deg`} : undefined}
     aria-hidden="true"

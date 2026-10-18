@@ -1,10 +1,11 @@
 ---
+import type {HTMLAttributes} from "astro/types";
 import styles from "./ColorBand.module.css";
 /**
  * A band of themed colors.
  * Used as a decorative or accent element.
  */
-type Props = {
+type Props = HTMLAttributes<"div"> & {
   /**
    * The height of the color band.
    */
@@ -19,7 +20,13 @@ type Props = {
   borderTop?: boolean;
 };
 
-const {height = "medium", borderBottom, borderTop, ...rest} = Astro.props;
+const {
+  height = "medium",
+  borderBottom,
+  borderTop,
+  class: className,
+  ...rest
+} = Astro.props;
 ---
 
 <div
@@ -28,6 +35,7 @@ const {height = "medium", borderBottom, borderTop, ...rest} = Astro.props;
     styles[height],
     borderBottom && styles.borderBottom,
     borderTop && styles.borderTop,
+    className,
   ]}
   {...rest}
   aria-hidden="true"

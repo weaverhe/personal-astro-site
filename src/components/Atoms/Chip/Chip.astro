@@ -78,6 +78,7 @@ const {
   count,
   dotColor,
   dotBlink,
+  class: className,
   ...rest
 } = Astro.props;
 ---
@@ -89,6 +90,7 @@ const {
     shadow && styles.shadow,
     styles[borderStyle],
     styles[shape],
+    className,
   ]}
   {...rest}
   aria-hidden="true"
