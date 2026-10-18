@@ -169,7 +169,7 @@
   --cream: oklch(97.3556% 0.016 58.6413deg); /* #fff4ec */
   --white: oklch(99% 0.0068 67.75deg); /* #fffbf7 */
   --blush: oklch(94.82% 0.0297 52.72deg); /* #ffe9dc */
-  --peach: oklch(89.73% 0.629 55.14deg); /* #ffd3b6 */
+  --peach: oklch(89.73% 0.0629 55.14deg); /* #ffd3b6 */
   --apricot: oklch(86.29% 0.0834 51.53deg); /* #ffc3a0 */
   --salmon: oklch(82.27% 0.0993 19.41deg); /* #ffabab */
   --lilac: oklch(80.79% 0.0664 325.35deg); /* #d7b2d8 */
