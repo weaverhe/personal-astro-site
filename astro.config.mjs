@@ -1,6 +1,8 @@
 // @ts-check
 import {defineConfig, fontProviders} from "astro/config";
 
+import mdx from "@astrojs/mdx";
+
 // https://astro.build/config
 // eslint-disable-next-line unicorn/no-top-level-side-effects -- Astro recommended setup!
 export default defineConfig({
@@ -70,4 +72,6 @@ export default defineConfig({
       },
     },
   ],
+
+  integrations: [mdx()],
 });
