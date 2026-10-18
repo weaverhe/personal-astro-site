@@ -1,3 +1,18 @@
 {
-  "astro.language-server.ls-path": "./node_modules/@astrojs/language-server/bin/nodeServer.js"
+  "astro.language-server.ls-path": "./node_modules/@astrojs/language-server/bin/nodeServer.js",
+  // Prettier formats everything
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[astro]": {"editor.defaultFormatter": "esbenp.prettier-vscode"},
+  "[css]": {"editor.defaultFormatter": "esbenp.prettier-vscode"},
+  "[html]": {"editor.defaultFormatter": "esbenp.prettier-vscode"},
+  "[markdown]": {"editor.defaultFormatter": "esbenp.prettier-vscode"},
+
+  // ESLint + Stylelint auto-fix on save (these run before Prettier)
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
+  },
+  "eslint.format.enable": false,
+  "stylelint.validate": ["css", "astro"]
 }
