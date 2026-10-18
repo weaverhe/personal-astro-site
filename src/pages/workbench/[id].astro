@@ -1,0 +1,16 @@
+---
+import {getCollection, render} from "astro:content";
+import WorkBenchEntry from "../../components/Layouts/WorkBenchEntry.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("workbench");
+  return posts.map((post) => ({params: {id: post.id}, props: {post}}));
+}
+
+const {post} = Astro.props;
+const {Content} = await render(post);
+---
+
+<WorkBenchEntry title={post.data.title}>
+  <Content />
+</WorkBenchEntry>

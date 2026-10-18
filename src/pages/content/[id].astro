@@ -1,0 +1,16 @@
+---
+import {getCollection, render} from "astro:content";
+import ContentPost from "../../components/Layouts/ContentPost.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("content");
+  return posts.map((post) => ({params: {id: post.id}, props: {post}}));
+}
+
+const {post} = Astro.props;
+const {Content} = await render(post);
+---
+
+<ContentPost title={post.data.title}>
+  <Content />
+</ContentPost>

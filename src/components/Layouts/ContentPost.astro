@@ -1,0 +1,13 @@
+---
+import Text from "../Atoms/Text/Text.astro";
+import BaseLayout from "./BaseLayout.astro";
+
+const {title} = Astro.props;
+---
+
+<BaseLayout title={title}>
+  <Text as="h1" variant="display">
+    {title}
+  </Text>
+  <slot />
+</BaseLayout>

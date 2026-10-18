@@ -1,0 +1,21 @@
+---
+import {getCollection} from "astro:content";
+import BaseLayout from "../../components/Layouts/BaseLayout.astro";
+import Text from "../../components/Atoms/Text/Text.astro";
+
+const allContent = await getCollection("content");
+---
+
+<BaseLayout title="Content | Heather's Site">
+  <Text as="h1" variant="display" data-test="testing">
+    Content Home
+  </Text>
+  {allContent.map((item) => (
+    <>
+      <Text as="p">{item.data.title}</Text>
+      <Text as="a" href={`/content/${item.id}`}>
+        Read more
+      </Text>
+    </>
+  ))}
+</BaseLayout>
