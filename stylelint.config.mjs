@@ -17,7 +17,10 @@ export default {
     ],
     "function-no-unknown": [true, {ignoreFunctions: ["anchor"]}],
     // `@util` is provided by postcss-utilities
-    "at-rule-no-unknown": [true, {ignoreAtRules: ["util"]}],
+    "at-rule-no-unknown": [
+      true,
+      {ignoreAtRules: ["util", "define-mixin", "mixin"]},
+    ],
     // CSS Modules `composes` values reference class names that may be camelCase
     "value-keyword-case": ["lower", {ignoreProperties: ["composes"]}],
     "at-rule-prelude-no-invalid": [true, {ignoreAtRules: ["custom-selector"]}],

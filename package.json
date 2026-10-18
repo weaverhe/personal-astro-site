@@ -46,6 +46,7 @@
     "lint-staged": "^17.6.0",
     "postcss-custom-selectors": "^9.0.4",
     "postcss-html": "^2.0.0",
+    "postcss-mixins": "^12.1.2",
     "postcss-preset-env": "^11.6.1",
     "postcss-utilities": "^0.8.4",
     "prettier": "^3.9.10",
