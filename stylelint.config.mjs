@@ -24,5 +24,9 @@ export default {
     // CSS Modules `composes` values reference class names that may be camelCase
     "value-keyword-case": ["lower", {ignoreProperties: ["composes"]}],
     "at-rule-prelude-no-invalid": [true, {ignoreAtRules: ["custom-selector"]}],
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {ignorePseudoClasses: ["global", "local"]},
+    ],
   },
 };
