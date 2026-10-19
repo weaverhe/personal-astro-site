@@ -25,14 +25,14 @@ a.sticker {
 .small {
   --sticker-shadow: var(--shadow-offset-xs);
 
-  padding: 5px 8px 7px;
+  padding: 7px 8px;
   border-radius: var(--radius-sm);
   box-shadow: var(--shadow-xs);
 
   @media screen and (width >= 768px) {
     --sticker-shadow: var(--shadow-offset-sm);
 
-    padding: 8px 12px 10px;
+    padding: 10px 12px;
     box-shadow: var(--shadow-sm);
   }
 }
@@ -40,14 +40,14 @@ a.sticker {
 .medium {
   --sticker-shadow: var(--shadow-offset-sm);
 
-  padding: 10px 16px 12px;
+  padding: 12px 16px;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
 
   @media screen and (width >= 768px) {
     --sticker-shadow: var(--shadow-offset-md);
 
-    padding: 12px 20px 14px;
+    padding: 14px 20px;
     box-shadow: var(--shadow-md);
   }
 }
@@ -55,14 +55,14 @@ a.sticker {
 .large {
   --sticker-shadow: var(--shadow-offset-md);
 
-  padding: 12px 20px 14px;
+  padding: 14px 20px;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-md);
 
   @media screen and (width >= 768px) {
     --sticker-shadow: var(--shadow-offset-lg);
 
-    padding: 14px 24px 16px;
+    padding: 16px 24px;
     box-shadow: var(--shadow-lg);
   }
 }
