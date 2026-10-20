@@ -17,9 +17,6 @@ importers:
       astro:
         specifier: ^7.3.8
         version: 7.3.8(@types/node@26.6.5)(esbuild@0.28.2)(sugarss@5.0.2(postcss@8.5.29))(yaml@2.9.1)
-      eslint-config-xo:
-        specifier: ^5.0.0
-        version: 5.0.0(@typescript-eslint/utils@8.71.2(eslint@10.12.0)(typescript@6.0.3))(eslint@10.12.0)(prettier@3.9.10)(typescript@6.0.3)
     devDependencies:
       '@astrojs/check':
         specifier: ^0.9.10
@@ -45,6 +42,9 @@ importers:
       eslint:
         specifier: ^10.12.0
         version: 10.12.0
+      eslint-config-xo:
+        specifier: ^5.0.0
+        version: 5.0.0(@typescript-eslint/utils@8.71.2(eslint@10.12.0)(typescript@6.0.3))(eslint@10.12.0)(prettier@3.9.10)(typescript@6.0.3)
       eslint-plugin-astro:
         specifier: ^3.2.1
         version: 3.2.1(@typescript-eslint/parser@8.71.2(eslint@10.12.0)(typescript@6.0.3))(eslint-plugin-jsx-a11y@6.10.2(eslint@10.12.0))(eslint@10.12.0)(typescript-eslint@8.71.2(eslint@10.12.0)(typescript@6.0.3))
