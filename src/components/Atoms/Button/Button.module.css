@@ -17,6 +17,8 @@
 .button {
   cursor: pointer;
 
+  display: inline flow-root;
+
   min-block-size: 52px;
   padding: 10px 22px;
   border: var(--stroke-bold) solid var(--ink);

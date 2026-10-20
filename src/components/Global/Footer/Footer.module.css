@@ -1,0 +1,155 @@
+.footer {
+  @mixin standardContainer;
+
+  margin-block-start: var(--space-20);
+}
+
+.container {
+  container-type: inline-size;
+  display: block flex;
+  flex-direction: column;
+  gap: var(--space-10);
+  align-items: center;
+
+  padding: var(--space-24) var(--space-20) var(--space-10);
+  border-start-start-radius: var(--radius-xl);
+  border-start-end-radius: var(--radius-xl);
+
+  background-color: var(--ink);
+
+  @media screen and (width <= 600px) {
+    padding: var(--space-16) var(--space-12) var(--space-8);
+  }
+
+  @media screen and (width <= 450px) {
+    padding-inline: var(--space-8);
+  }
+}
+
+.hello {
+  margin-block-end: var(--space-1);
+  font-size: 1.2rem;
+}
+
+.statements,
+.navItems {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navItems {
+  display: block flex;
+  flex-flow: row wrap;
+
+  @media screen and (width <= 600px) {
+    flex-direction: column;
+    gap: var(--space-5);
+    align-items: center;
+  }
+}
+
+.navLink {
+  text-decoration: underline;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: var(--ink);
+  }
+}
+
+.navEmailContainer {
+  inline-size: 100%;
+  margin: var(--space-4) 0 var(--space-12);
+
+  @media screen and (width <= 600px) {
+    margin: var(--space-4) 0;
+  }
+}
+
+.navEmail {
+  display: inline flow-root;
+
+  font-size: 7.8cqi;
+  color: var(--peach);
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition: var(--quick-ui-change);
+
+  &:hover,
+  &:focus-visible,
+  &:active {
+    color: var(--white);
+  }
+
+  &:focus-visible {
+    text-decoration: underline;
+  }
+}
+
+.navButtonContainer {
+  margin-inline-end: var(--space-4);
+}
+
+.navButton {
+  --shadow-color: var(--pink);
+
+  border-color: var(--white);
+  font-size: 1.2rem;
+  box-shadow: var(--shadow-md);
+}
+
+.statements {
+  display: block flex;
+  flex-wrap: wrap;
+  gap: var(--space-10);
+  justify-content: center;
+
+  inline-size: 100%;
+  margin-block-start: var(--space-6);
+  padding-block-start: var(--space-6);
+  border-block-start: var(--stroke-bold) solid var(--salmon);
+
+  @media screen and (width <= 1000px) {
+    flex-direction: column;
+    gap: var(--space-5);
+    align-items: center;
+  }
+
+  @media screen and (width <= 600px) {
+    gap: var(--space-3);
+    margin-block-start: 0;
+    padding-block-start: var(--space-6);
+  }
+}
+
+.statement {
+  position: relative;
+  display: block flex;
+  gap: var(--space-2);
+  align-items: center;
+
+  &::after {
+    content: "/";
+
+    position: absolute;
+    inset-block-start: 52%;
+    inset-inline-end: -1em;
+    transform: translateY(-50%);
+
+    font-family: var(--font-display);
+    font-size: 1.4em;
+    font-weight: bold;
+    color: var(--salmon);
+
+    @media screen and (width <= 1000px) {
+      display: none;
+    }
+  }
+
+  &:last-child::after {
+    content: "";
+  }
+}

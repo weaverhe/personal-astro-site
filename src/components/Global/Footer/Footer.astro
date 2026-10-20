@@ -1,0 +1,92 @@
+---
+import Button from "../../Atoms/Button/Button.astro";
+import ColorBand from "../../Atoms/ColorBand/ColorBand.astro";
+import Text from "../../Atoms/Text/Text.astro";
+import styles from "./Footer.module.css";
+
+const navItems = [
+  {
+    href: "https://github.com/weaverhe/",
+    label: "GitHub",
+  },
+  {
+    href: "https://www.linkedin.com/in/heathereweaver/",
+    label: "LinkedIn",
+  },
+];
+
+const statements = [
+  {
+    label: "Free Palestine",
+    emoji: "🍉",
+  },
+  {
+    label: "Trans rights are human rights",
+    emoji: "🏳️‍⚧️",
+  },
+  {
+    label: "Workers of the world, unite",
+    emoji: "✊",
+  },
+];
+---
+
+<footer class:list={[styles.footer]}>
+  <div class:list={[styles.container]}>
+    <div class:list={[styles.linkContainer]}>
+      <Text
+        as="p"
+        variant="kicker"
+        uppercase
+        color="salmon"
+        class:list={[styles.hello]}
+      >
+        Holler at me
+      </Text>
+      <nav class:list={[styles.nav]}>
+        <ul class:list={[styles.navItems]}>
+          <li class:list={[styles.navItem, styles.navEmailContainer]}>
+            <Text
+              as="a"
+              variant="h1"
+              href="mailto:hello@hweaver.com"
+              class:list={[styles.navEmail]}
+            >
+              hello@hweaver.com
+            </Text>
+          </li>
+          {navItems.map((item) => (
+            <li class:list={[styles.navItem, styles.navButtonContainer]}>
+              <Button
+                as="a"
+                href={item.href}
+                color="white"
+                class:list={[styles.navButton]}
+              >
+                {item.label}
+              </Button>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+    <ul class:list={[styles.statements]}>
+      {statements.map((statement) => (
+        <li class:list={[styles.statement]}>
+          <Text as="span" class:list={[styles.statementEmoji]} variant="lede">
+            {statement.emoji}
+          </Text>
+          <Text
+            as="span"
+            class:list={[styles.statementLabel]}
+            variant="body"
+            color="cream"
+          >
+            {statement.label}
+          </Text>
+        </li>
+      ))}
+    </ul>
+  </div>
+  <ColorBand height="medium" />
+</footer>
