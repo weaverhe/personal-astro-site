@@ -183,6 +183,13 @@
   }
 }
 
+.bold-link,
+.link,
+.external-link {
+  color: inherit;
+  text-decoration: none;
+}
+
 .link,
 .external-link {
   padding: 0 2px;
@@ -190,8 +197,6 @@
 
   font-family: var(--font-body);
   font-weight: 700;
-  color: inherit;
-  text-decoration: none;
 
   box-decoration-break: clone;
   box-shadow: inset 0 -4px 0 var(--pink);
@@ -207,6 +212,34 @@
     border-radius: var(--radius-sm);
     background: var(--salmon);
     box-shadow: var(--shadow-xs);
+  }
+}
+
+.bold-link {
+  padding: 9px 16px;
+  border: var(--stroke-bold) solid transparent;
+  border-radius: var(--radius-pill);
+
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.2;
+
+  font-stretch: 112%;
+
+  &:hover,
+  &:focus-visible,
+  &:active {
+    border-color: var(--ink);
+    background-color: var(--white);
+  }
+
+  &:focus-visible {
+    box-shadow: var(--shadow-sm);
+  }
+
+  @media screen and (width >= 768px) {
+    font-size: 1.5rem;
   }
 }
 
