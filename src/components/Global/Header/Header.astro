@@ -2,15 +2,69 @@
 import ColorBand from "../../Atoms/ColorBand/ColorBand.astro";
 import StickerLabel from "../../Atoms/StickerLabel/StickerLabel.astro";
 import Text from "../../Atoms/Text/Text.astro";
+import Button from "../../Atoms/Button/Button.astro";
 import styles from "./Header.module.css";
+
+const {pathname} = Astro.url;
+const isActive = (href: string): boolean =>
+  (pathname === "/" && href === "/") ||
+  (href !== "/" && pathname === href) ||
+  (href !== "/" && pathname.startsWith(href + "/"));
+
+const navItems = [
+  {href: "/", label: "Home"},
+  {href: "/content", label: "Content"},
+  {href: "/workbench", label: "Workbench"},
+  {href: "/about", label: "About"},
+  {href: "/contact", label: "Contact"},
+];
 ---
+
+<script>
+  import {headerMenu} from "./HeaderScript";
+
+  const menuToggle = document.getElementById("menu-toggle")!;
+  const header: HTMLElement = menuToggle.closest("header")!;
+  headerMenu(header);
+</script>
 
 <ColorBand borderBottom height="large" />
 <header class:list={[styles.header]}>
   <!-- skip to content button -->
-  <StickerLabel corners="pill" as="a" href="/">
+  <StickerLabel corners="pill" as="a" href="/" class={styles.logo} id="logo">
     <Text as="span" variant="h4">
       heather weaver
     </Text>
   </StickerLabel>
+  <Button
+    id="menu-toggle"
+    aria-controls="nav"
+    aria-expanded="false"
+    color="white"
+    aria-label="Menu"
+    class={styles.menuToggle}
+  >
+    <span class={styles.navicon}>
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+  </Button>
+  <nav id="nav" class:list={[styles.nav]}>
+    <ul class:list={[styles.navItems]}>
+      {navItems.map((item) => (
+        <li class:list={[styles.navItem]}>
+          <Text
+            as="a"
+            variant="bold-link"
+            class:list={[styles.navLink]}
+            href={item.href}
+            aria-current={isActive(item.href) ? "page" : undefined}
+          >
+            {item.label}
+          </Text>
+        </li>
+      ))}
+    </ul>
+  </nav>
 </header>
