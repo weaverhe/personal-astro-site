@@ -1,7 +1,6 @@
 import {readdirSync} from "node:fs";
 import {fileURLToPath} from "node:url";
 import {preview} from "astro";
-import {afterAll, beforeAll, describe, expect, it} from "vitest";
 
 const root = new URL("../../", import.meta.url);
 

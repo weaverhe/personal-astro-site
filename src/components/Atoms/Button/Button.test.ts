@@ -1,5 +1,4 @@
 import {experimental_AstroContainer as AstroContainer} from "astro/container";
-import {expect, test, describe} from "vitest";
 import Button from "./Button.astro";
 import styles from "./Button.module.css";
 

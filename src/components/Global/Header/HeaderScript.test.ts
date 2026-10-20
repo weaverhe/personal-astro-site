@@ -1,13 +1,4 @@
 // @vitest-environment jsdom
-import {
-  afterEach,
-  beforeAll,
-  beforeEach,
-  describe,
-  expect,
-  test,
-  vi,
-} from "vitest";
 import {headerMenu} from "./HeaderScript.ts";
 
 HTMLElement.prototype.checkVisibility = vi.fn(function (this: HTMLElement) {

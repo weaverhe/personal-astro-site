@@ -1,5 +1,4 @@
 import {experimental_AstroContainer as AstroContainer} from "astro/container";
-import {expect, test, describe} from "vitest";
 import Shape from "./Shape.astro";
 import {shapes} from "./Shape.constants.ts";
 import styles from "./Shape.module.css";

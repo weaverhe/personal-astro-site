@@ -1,5 +1,4 @@
 import {experimental_AstroContainer as AstroContainer} from "astro/container";
-import {expect, test, describe} from "vitest";
 import ColorBand from "./ColorBand.astro";
 import styles from "./ColorBand.module.css";
 

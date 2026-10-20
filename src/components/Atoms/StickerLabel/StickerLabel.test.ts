@@ -1,5 +1,4 @@
 import {experimental_AstroContainer as AstroContainer} from "astro/container";
-import {expect, test, describe} from "vitest";
 import Text from "../Text/Text.astro";
 import StickerLabel from "./StickerLabel.astro";
 import styles from "./StickerLabel.module.css";

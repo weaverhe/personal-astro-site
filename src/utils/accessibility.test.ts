@@ -1,6 +1,5 @@
 // @vitest-environment jsdom
 
-import {expect, describe, test, vi} from "vitest";
 import {getFocusableElements} from "./accessibility.ts";
 
 HTMLElement.prototype.checkVisibility = vi.fn(function (this: HTMLElement) {

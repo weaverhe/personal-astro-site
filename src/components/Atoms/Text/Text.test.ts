@@ -1,5 +1,4 @@
 import {experimental_AstroContainer as AstroContainer} from "astro/container";
-import {expect, test, describe} from "vitest";
 import Text from "./Text.astro";
 import styles from "./Text.module.css";
 
