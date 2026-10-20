@@ -29,8 +29,16 @@ const navItems = [
 </script>
 
 <ColorBand borderBottom height="large" />
+<Button
+  as="a"
+  href="#main"
+  class={styles.skipToContent}
+  color="pink"
+  size="large"
+>
+  Skip to content
+</Button>
 <header class:list={[styles.header]}>
-  <!-- skip to content button -->
   <StickerLabel corners="pill" as="a" href="/" class={styles.logo} id="logo">
     <Text as="span" variant="h4">
       heather weaver

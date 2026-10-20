@@ -155,3 +155,15 @@ header:global(.no-transition) {
     }
   }
 }
+
+.skipToContent {
+  position: absolute;
+  inset-inline-end: 0;
+  transform: translateY(-200%);
+  transition: none;
+
+  &:focus {
+    z-index: 10000;
+    transform: translateY(0);
+  }
+}
