@@ -1,0 +1,86 @@
+.badge {
+  position: relative;
+
+  inline-size: 150px;
+  block-size: 150px;
+  border: var(--stroke-bold) solid var(--ink);
+  border-radius: var(--radius-pill);
+
+  box-shadow: var(--shadow-md);
+}
+
+.badgeContent {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+
+  text {
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+
+    fill: var(--ink);
+
+    font-stretch: 112%;
+  }
+
+  textPath {
+    padding-inline-end: 20px;
+  }
+}
+
+.spin .badgeContent {
+  animation: var(--slow-spin);
+}
+
+.centerRing {
+  position: absolute;
+  inset: 41px;
+
+  display: block grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background-color: var(--ink);
+
+  svg {
+    inline-size: 36px;
+    block-size: 36px;
+  }
+}
+
+.cream {
+  background-color: var(--cream);
+}
+
+.white {
+  background-color: var(--white);
+}
+
+.blush {
+  background-color: var(--blush);
+}
+
+.peach {
+  background-color: var(--peach);
+}
+
+.apricot {
+  background-color: var(--apricot);
+}
+
+.salmon {
+  background-color: var(--salmon);
+}
+
+.lilac {
+  background-color: var(--lilac);
+}
+
+.pink {
+  background-color: var(--pink);
+}

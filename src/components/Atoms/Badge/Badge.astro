@@ -1,0 +1,67 @@
+---
+import type {HTMLAttributes} from "astro/types";
+import type {LightColor} from "../../../constants/colors.ts";
+import styles from "./Badge.module.css";
+
+/**
+ * A badge component that displays a list of labels in a circular ring.
+ */
+type Props = HTMLAttributes<"div"> & {
+  /**
+   * The labels to put on the badge.
+   */
+  labels: string[];
+  /**
+   * The background color to use. Defaults to blush if not provided.
+   */
+  backgroundColor?: LightColor;
+  /**
+   * If the badge should spin or not. Defaults to false.
+   */
+  spin?: boolean;
+};
+
+const {
+  labels,
+  backgroundColor = "blush",
+  spin,
+  class: className,
+  ...rest
+} = Astro.props;
+---
+
+<div
+  class:list={[
+    styles.badge,
+    styles[backgroundColor],
+    spin && styles.spin,
+    className,
+  ]}
+  {...rest}
+>
+  <svg
+    class:list={styles.badgeContent}
+    viewBox="0 0 200 200"
+    aria-hidden="true"
+  >
+    <defs>
+      <path
+        id="sp-ring"
+        d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"
+      ></path>
+    </defs>
+    <text>
+      <textPath href="#sp-ring" textLength="465" lengthAdjust="spacing">
+        {labels.map((l) => `${l}\u{A0}✦\u{A0}`).join("")}
+      </textPath>
+    </text>
+  </svg>
+  <span class:list={[styles.centerRing]}>
+    <svg viewBox="0 0 100 100" aria-hidden="true">
+      <path
+        style={`fill: var(--${backgroundColor})`}
+        d="M50 0 C54 36 64 46 100 50 C64 54 54 64 50 100 C46 64 36 54 0 50 C36 46 46 36 50 0 Z"
+      ></path>
+    </svg>
+  </span>
+</div>
