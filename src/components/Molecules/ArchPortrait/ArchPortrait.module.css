@@ -1,0 +1,21 @@
+.archPortrait {
+  position: relative;
+}
+
+.sticker,
+.badge {
+  position: absolute;
+}
+
+.sticker {
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  transform: translate(20%, -2%);
+  inline-size: 15%;
+}
+
+.badge {
+  inset-block-end: 0;
+  inset-inline-start: 0;
+  transform: translate(-30%, -20%);
+}

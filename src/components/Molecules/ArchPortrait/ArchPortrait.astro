@@ -1,0 +1,83 @@
+---
+import type {HTMLAttributes} from "astro/types";
+import type {ImageMetadata} from "astro";
+import type {PaletteColor, LightColor} from "../../../constants/colors.ts";
+import type {ShapeName, ShapeColor} from "../../Atoms/Shape/Shape.constants.ts";
+import PhotoContainer from "../../Atoms/PhotoContainer/PhotoContainer.astro";
+import Badge from "../../Atoms/Badge/Badge.astro";
+import Shape from "../../Atoms/Shape/Shape.astro";
+import styles from "./ArchPortrait.module.css";
+
+/**
+ * A portrait molecule that displays an image, badge, and sticker.
+ */
+type Props = HTMLAttributes<"div"> & {
+  /**
+   * The URL of the image to display in the arch.
+   */
+  imageSrc: ImageMetadata;
+  /**
+   * The alt text for the image.
+   */
+  imageAlt: string;
+  /**
+   * The shape of the sticker to display on the portrait. Defaults to burst.
+   */
+  stickerShape?: ShapeName;
+  /**
+   * The color of the sticker to display on the portrait. Defaults to white.
+   */
+  stickerColor?: ShapeColor;
+  /**
+   * The color of the frame around the portrait. Defaults to lilac.
+   */
+  frameColor?: PaletteColor;
+  /**
+   * The labels to put on the badge.
+   */
+  badgeLabels: string[];
+  /**
+   * If the badge should spin or not. Defaults to true.
+   */
+  badgeSpin?: boolean;
+  /**
+   * The background color of the badge. Defaults to apricot.
+   */
+  badgeColor?: LightColor;
+};
+
+const {
+  imageSrc,
+  imageAlt,
+  stickerShape = "burst",
+  stickerColor = "white",
+  badgeLabels,
+  badgeColor = "apricot",
+  badgeSpin = true,
+  class: className,
+  frameColor = "lilac",
+  ...rest
+} = Astro.props;
+---
+
+<div class:list={[styles.archPortrait, className]} {...rest}>
+  <Shape
+    shape={stickerShape}
+    color={stickerColor}
+    class:list={[styles.sticker]}
+  />
+  <PhotoContainer
+    image={imageSrc}
+    alt={imageAlt}
+    frameColor={frameColor}
+    shape="arch"
+    class:list={[styles.photo]}
+    shadow
+  />
+  <Badge
+    class:list={[styles.badge]}
+    labels={badgeLabels}
+    backgroundColor={badgeColor}
+    spin={badgeSpin}
+  />
+</div>
