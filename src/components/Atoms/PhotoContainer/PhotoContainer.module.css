@@ -1,0 +1,100 @@
+.container {
+  align-self: start;
+}
+
+.image {
+  display: block flow;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+.arch {
+  aspect-ratio: 4 / 5.4;
+  border-radius: var(--radius-pill) var(--radius-pill) 0 0;
+
+  .image {
+    border-radius: var(--radius-pill) var(--radius-pill) 0 0;
+  }
+}
+
+.circle {
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+
+  .image {
+    border-radius: 50%;
+  }
+}
+
+.square {
+  aspect-ratio: 1 / 1;
+}
+
+.rounded-corners {
+  border-radius: var(--radius-md);
+
+  .image {
+    border-radius: var(--radius-md);
+  }
+}
+
+.border {
+  border: var(--stroke-fine) solid var(--ink);
+
+  .image {
+    border: var(--stroke-fine) solid var(--ink);
+  }
+
+  &.frame-none {
+    border: 0;
+  }
+}
+
+[class*="frame-"]:not(.frame-none) {
+  padding: var(--space-3);
+}
+
+.frame-cream {
+  background-color: var(--cream);
+}
+
+.frame-white {
+  background-color: var(--white);
+}
+
+.frame-blush {
+  background-color: var(--blush);
+}
+
+.frame-peach {
+  background-color: var(--peach);
+}
+
+.frame-apricot {
+  background-color: var(--apricot);
+}
+
+.frame-salmon {
+  background-color: var(--salmon);
+}
+
+.frame-lilac {
+  background-color: var(--lilac);
+}
+
+.frame-pink {
+  background-color: var(--pink);
+}
+
+.frame-gray {
+  background-color: var(--gray);
+}
+
+.frame-ink {
+  background-color: var(--ink);
+}
+
+.shadow {
+  box-shadow: var(--shadow-lg);
+}
