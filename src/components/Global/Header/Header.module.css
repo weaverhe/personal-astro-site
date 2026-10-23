@@ -1,5 +1,5 @@
 .header {
-  @mixin standardContainer;
+  @mixin bigContainer;
 
   display: block flex;
   align-items: center;

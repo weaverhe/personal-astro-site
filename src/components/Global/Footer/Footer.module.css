@@ -1,5 +1,5 @@
 .footer {
-  @mixin standardContainer;
+  @mixin bigContainer;
 
   margin-block-start: var(--space-20);
 }

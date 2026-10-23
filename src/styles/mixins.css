@@ -1,5 +1,11 @@
 @define-mixin standardContainer {
   inline-size: 96vi;
-  max-inline-size: 1500px;
+  max-inline-size: 1250px;
+  margin: 0 auto;
+}
+
+@define-mixin bigContainer {
+  inline-size: 96vi;
+  max-inline-size: 1600px;
   margin: 0 auto;
 }
