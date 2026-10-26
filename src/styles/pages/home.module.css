@@ -1,0 +1,53 @@
+.hero {
+  @mixin standardContainer;
+
+  display: block flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-block-start: var(--space-16);
+
+  @media screen and (width >= 768px) {
+    flex-direction: row;
+  }
+}
+
+.heroTextContainer {
+  @media screen and (width >= 768px) {
+    inline-size: 60%;
+  }
+}
+
+.heroImageContainer {
+  margin-block-start: var(--space-12);
+
+  @media screen and (width >= 768px) {
+    inline-size: 35%;
+    margin-block-start: 0;
+  }
+}
+
+.heroChips {
+  display: block flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-block-end: var(--space-8);
+}
+
+.heroHeadline {
+  margin-block-end: var(--space-6);
+
+  @media screen and (width <= 1200px) {
+    font-size: 5rem;
+  }
+}
+
+.heroCopy {
+  margin-block-end: var(--space-10);
+}
+
+.heroButtons {
+  display: block flex;
+  gap: var(--space-4);
+}

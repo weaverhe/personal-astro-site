@@ -1,10 +1,46 @@
 ---
 import BaseLayout from "../components/Layouts/BaseLayout.astro";
 import Text from "../components/Atoms/Text/Text.astro";
+import Button from "../components/Atoms/Button/Button.astro";
+import Chip from "../components/Atoms/Chip/Chip.astro";
+import ArchPortrait from "../components/Molecules/ArchPortrait/ArchPortrait.astro";
+import styles from "../styles/pages/home.module.css";
+import portrait from "../assets/images/heather-ruth.jpg";
 ---
 
 <BaseLayout title="Homepage | Heather's Site">
-  <Text as="h1" variant="display" data-test="testing">
-    Homepage
-  </Text>
+  <div class={styles.hero}>
+    <div class={styles.heroTextContainer}>
+      <div class={styles.heroChips}>
+        <Chip label="They/Them" backgroundColor="salmon" />
+        <Chip label="Software Engineer" />
+        <Chip label="Midcoast Maine" backgroundColor="peach" />
+      </div>
+      <Text as="h1" variant="display" class={styles.heroHeadline}>
+        Hi, I'm Heather.
+      </Text>
+      <!-- prettier-ignore -->
+      <Text as="p" variant="lede" class={styles.heroCopy}>
+        I'm a software engineer, a life-long learner, and a builder at heart. I
+        like to dive deep into problems, and find the most pragmatic way out of
+        (or around) them. I'm currently a senior software engineer at HubSpot.
+        Outside of work, you'll find me <Text as="a" href="/content">writing</Text>, <Text as="a" href="/workbench">building cool stuff</Text>, and getting outside to enjoy beautiful Midcoast Maine.
+      </Text>
+      <div class={styles.heroButtons}>
+        <Button as="a" href="/content" color="pink" size="large">
+          My Writing
+        </Button>
+        <Button as="a" href="/about" size="large">
+          More About Me
+        </Button>
+      </div>
+    </div>
+    <div class:list={[styles.heroImageContainer]}>
+      <ArchPortrait
+        imageSrc={portrait}
+        imageAlt="Heather smiling in a blue flannel shirt as a torty cat named Ruth climbs across their shoulders."
+        badgeLabels={["they/them", "engineer", "maine", "builder"]}
+      />
+    </div>
+  </div>
 </BaseLayout>
