@@ -1,6 +1,7 @@
 // @ts-check
 import {defineConfig, fontProviders} from "astro/config";
 import mdx from "@astrojs/mdx";
+import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 // eslint-disable-next-line unicorn/no-top-level-side-effects -- Astro recommended setup!
@@ -73,4 +74,5 @@ export default defineConfig({
   ],
 
   integrations: [mdx()],
+  adapter: cloudflare(),
 });

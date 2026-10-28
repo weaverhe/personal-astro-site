@@ -1,0 +1,21 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "compatibility_date": "2026-10-19",
+  "compatibility_flags": ["global_fetch_strictly_public"],
+  "name": "my-astro-site",
+  "main": "@astrojs/cloudflare/entrypoints/server",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+  },
+  "observability": {
+    "enabled": true,
+  },
+  "d1_databases": [
+    {
+      "binding": "NEWSLETTER_DB",
+      "database_name": "newsletter",
+      "database_id": "c98d9954-adb4-4510-ba99-005406118140",
+    },
+  ],
+}

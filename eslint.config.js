@@ -4,7 +4,16 @@ import eslintConfigXo from "eslint-config-xo";
 
 // eslint-disable-next-line unicorn/no-top-level-side-effects -- Eslint recommended setup!
 export default defineConfig([
-  {ignores: ["dist/", ".astro/", "node_modules/", "**/*.css"]},
+  {
+    ignores: [
+      "dist/",
+      ".astro/",
+      "node_modules/",
+      "**/*.css",
+      "wrangler.jsonc",
+      "worker-configuration.d.ts",
+    ],
+  },
   ...eslintConfigXo({
     browser: true,
     space: true,

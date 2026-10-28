@@ -24,16 +24,20 @@
     "check": "pn format && pn lint && pn lint:css && pn types && pn test:run && pn test:routes",
     "prepare": "husky",
     "storybook": "storybook dev",
-    "storybook:build": "storybook build"
+    "storybook:build": "storybook build",
+    "generate-types": "wrangler types",
+    "db:local:command": "pn wrangler d1 execute newsletter --local --command"
   },
   "dependencies": {
-    "@astrojs/markdown-satteri": "^0.4.4",
-    "@astrojs/mdx": "^8.1.0",
-    "astro": "^7.3.8"
+    "@astrojs/cloudflare": "^14.4.2",
+    "@astrojs/markdown-satteri": "^0.4.5",
+    "@astrojs/mdx": "^8.1.1",
+    "astro": "^7.4.2",
+    "wrangler": "^4.152.0"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.10",
-    "@astrojs/language-server": "^2.17.2",
+    "@astrojs/check": "^0.9.12",
+    "@astrojs/language-server": "^2.17.3",
     "@storybook-astro/framework": "^1.12.0",
     "@storybook/addon-docs": "^10.6.2",
     "@storybook/builder-vite": "^10.6.2",

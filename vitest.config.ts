@@ -7,6 +7,7 @@ import {configDefaults} from "vitest/config";
 export default getViteConfig({
   test: {
     globals: true,
+    sharedViteServer: false,
     projects: [
       {
         extends: true,

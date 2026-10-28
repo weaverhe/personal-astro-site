@@ -1,6 +1,7 @@
 allowBuilds:
   esbuild: true
   unrs-resolver: false
+  workerd: true
 peerDependencyRules:
   allowedVersions:
     eslint-plugin-jsx-a11y>eslint: "10"
