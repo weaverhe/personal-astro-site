@@ -1,0 +1,23 @@
+.input {
+  min-block-size: 3.25rem;
+  padding: 10px 16px;
+  border: var(--stroke-fine) solid var(--ink);
+  border-radius: var(--radius-input);
+
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  font-weight: 400;
+  color: var(--ink);
+
+  background-color: var(--white);
+
+  &:focus-visible {
+    box-shadow:
+      0 0 0 3px var(--white),
+      0 0 0 6px var(--ink);
+  }
+}
+
+:global(.error) .input {
+  border-color: var(--error);
+}
