@@ -4,11 +4,12 @@ import Shape from "../../Atoms/Shape/Shape.astro";
 import shapeStyles from "../../Atoms/Shape/Shape.module.css";
 import photoStyles from "../../Atoms/PhotoContainer/PhotoContainer.module.css";
 import badgeStyles from "../../Atoms/Badge/Badge.module.css";
+import ruth7 from "../../../../.storybook/images/ruth-7.jpeg";
 import styles from "./ArchPortrait.module.css";
 import ArchPortrait from "./ArchPortrait.astro";
 
 const baseProps = {
-  imageSrc: "/storybook-images/ruth-7.jpeg",
+  imageSrc: ruth7,
   imageAlt: "Ruth giving tongue",
   badgeLabels: ["Bro", "Ruth", "Is", "Giving", "Tongue"],
 };
@@ -47,7 +48,7 @@ describe("ArchPortrait Component", () => {
     expect(photo).not.toBeNull();
     expect(photo?.classList.contains(photoStyles.container)).toBe(true);
     const img = photo?.querySelector("img");
-    expect(img?.getAttribute("src")).toBe(baseProps.imageSrc);
+    expect(img?.getAttribute("src")).toContain("ruth-7.jpeg");
     expect(img?.getAttribute("alt")).toBe(baseProps.imageAlt);
 
     // Badge

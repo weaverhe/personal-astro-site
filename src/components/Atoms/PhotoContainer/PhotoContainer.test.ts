@@ -1,4 +1,5 @@
 import {experimental_AstroContainer as AstroContainer} from "astro/container";
+import ruth1 from "../../../../.storybook/images/ruth-1.jpeg";
 import PhotoContainer from "./PhotoContainer.astro";
 import styles from "./PhotoContainer.module.css";
 
@@ -7,11 +8,11 @@ describe("PhotoContainer", () => {
     const container = await AstroContainer.create();
     const result = await container.renderToString(PhotoContainer, {
       props: {
-        image: "/storybook-images/ruth-1.jpeg",
+        image: ruth1,
         alt: "Ruth 1",
       },
     });
-    expect(result).toContain('src="/storybook-images/ruth-1.jpeg"');
+    expect(result).toMatch(/src="[^"]*ruth-1\.jpeg/v);
     expect(result).toContain('alt="Ruth 1"');
   });
 
@@ -19,7 +20,7 @@ describe("PhotoContainer", () => {
     const container = await AstroContainer.create();
     const result = await container.renderToString(PhotoContainer, {
       props: {
-        image: "/storybook-images/ruth-1.jpeg",
+        image: ruth1,
         alt: "Ruth 1",
       },
     });
@@ -33,7 +34,7 @@ describe("PhotoContainer", () => {
     const container = await AstroContainer.create();
     const result = await container.renderToString(PhotoContainer, {
       props: {
-        image: "/storybook-images/ruth-1.jpeg",
+        image: ruth1,
         alt: "Ruth 1",
         shape: "circle",
         frameColor: "lilac",
