@@ -1,0 +1,52 @@
+---
+import type {ComponentProps, HTMLAttributes} from "astro/types";
+import TextInput from "../../Atoms/TextInput/TextInput.astro";
+import Text from "../../Atoms/Text/Text.astro";
+import styles from "./FormField.module.css";
+
+const INPUTS = {TextInput} as const;
+type InputMap = typeof INPUTS;
+type InputVariant = {
+  [K in keyof InputMap]: {
+    inputType: K;
+    inputProps?: ComponentProps<InputMap[K]>;
+  };
+}[keyof InputMap];
+
+/**
+ * A form field molecule. Contains a label and the input itself.
+ */
+type Props = Omit<HTMLAttributes<"div">, "id"> &
+  InputVariant & {
+    id: string;
+    label: string;
+    name: string;
+  };
+
+const {
+  inputType,
+  inputProps,
+  id,
+  label,
+  name,
+  class: className,
+  ...rest
+} = Astro.props;
+
+const Input = INPUTS[inputType];
+const errorId = `${id}-error`;
+---
+
+<div class:list={[styles.formField, className]} {...rest}>
+  <Text as="label" variant="label" for={id} class={styles.label}>
+    {label}
+  </Text>
+  <Input
+    {...inputProps}
+    id={id}
+    name={name}
+    aria-describedby={errorId}
+    class={styles.input}
+  />
+  <Text as="p" variant="body-small" id={errorId} class={styles.errorMessage} />
+</div>
