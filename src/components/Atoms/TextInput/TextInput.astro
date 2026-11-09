@@ -6,7 +6,7 @@ import styles from "./TextInput.module.css";
  * Input field component.
  */
 type Props = HTMLAttributes<"input"> & {
-  type?: "number" | "password" | "search" | "tel" | "text" | "url";
+  type?: "email" | "number" | "password" | "search" | "tel" | "text" | "url";
 };
 
 const {class: className, type = "text", ...rest} = Astro.props;
