@@ -21,6 +21,7 @@ type Props = Omit<HTMLAttributes<"div">, "id"> &
     id: string;
     label: string;
     name: string;
+    required?: boolean;
   };
 
 const {
@@ -29,6 +30,7 @@ const {
   id,
   label,
   name,
+  required = false,
   class: className,
   ...rest
 } = Astro.props;
@@ -40,6 +42,7 @@ const errorId = `${id}-error`;
 <div class:list={[styles.formField, className]} {...rest}>
   <Text as="label" variant="label" for={id} class={styles.label}>
     {label}
+    {required && "*"}
   </Text>
   <Input
     {...inputProps}
@@ -47,6 +50,13 @@ const errorId = `${id}-error`;
     name={name}
     aria-describedby={errorId}
     class={styles.input}
+    required={required}
   />
-  <Text as="p" variant="body-small" id={errorId} class={styles.errorMessage} />
+  <Text
+    as="p"
+    variant="body-small"
+    id={errorId}
+    class={styles.errorMessage}
+    highlight="salmon"
+  />
 </div>
