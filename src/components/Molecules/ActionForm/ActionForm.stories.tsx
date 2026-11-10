@@ -1,5 +1,5 @@
 import Button from "../../Atoms/Button/Button.astro";
-import FormField from "../../Molecules/FormField/FormField.astro";
+import FormField from "../FormField/FormField.astro";
 import ActionForm from "./ActionForm.astro";
 
 const meta = {
