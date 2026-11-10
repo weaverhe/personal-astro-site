@@ -1,18 +1,10 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "include": [
-    ".astro/types.d.ts",
-    "**/*",
-    "./worker-configuration.d.ts"
-  ],
-  "exclude": [
-    "dist"
-  ],
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist", "./worker-configuration.d.ts"],
   "compilerOptions": {
     "strictNullChecks": true,
     "allowJs": true,
-    "types": [
-      "vitest/globals"
-    ]
+    "types": ["vitest/globals", "cloudflare-turnstile"]
   }
 }

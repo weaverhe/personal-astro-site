@@ -14,5 +14,6 @@
     "source.fixAll.stylelint": "explicit"
   },
   "eslint.format.enable": false,
-  "stylelint.validate": ["css", "astro"]
+  "stylelint.validate": ["css", "astro"],
+  "js/ts.tsdk.path": "node_modules/typescript/lib"
 }

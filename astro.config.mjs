@@ -1,5 +1,5 @@
 // @ts-check
-import {defineConfig, fontProviders} from "astro/config";
+import {defineConfig, envField, fontProviders} from "astro/config";
 import mdx from "@astrojs/mdx";
 import cloudflare from "@astrojs/cloudflare";
 
@@ -72,7 +72,18 @@ export default defineConfig({
       },
     },
   ],
-
   integrations: [mdx()],
   adapter: cloudflare(),
+  env: {
+    schema: {
+      TURNSTILE_SITE_KEY: envField.string({
+        context: "client",
+        access: "public",
+      }),
+      TURNSTILE_SECRET_KEY: envField.string({
+        context: "server",
+        access: "secret",
+      }),
+    },
+  },
 });
