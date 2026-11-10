@@ -1,0 +1,71 @@
+---
+import type {HTMLAttributes} from "astro/types";
+import Text from "../../Atoms/Text/Text.astro";
+import Shape from "../../Atoms/Shape/Shape.astro";
+import styles from "./ActionForm.module.css";
+
+/**
+ * A form component, wraps FormField elements.
+ * Handles validation, turnstile, and integration with an Astro action.
+ */
+type Props = HTMLAttributes<"form"> & {
+  actionName: string;
+  turnstile?: boolean;
+  successMessage?: string;
+};
+
+const {
+  turnstile = true,
+  class: className,
+  actionName,
+  successMessage,
+  ...rest
+} = Astro.props;
+---
+
+<action-form
+  {...(turnstile && {"data-turnstile": "true"})}
+  data-action-name={actionName}
+  data-success-message={successMessage}
+>
+  <div
+    class:list={[styles.formSuccessContainer, "success-container", "hidden"]}
+  >
+    <Shape
+      shape="star-14"
+      color="pink"
+      size="small"
+      class:list={[styles.formSuccessShape, "success-shape"]}
+    />
+    <Text
+      class:list={[styles.formSuccess, "success-message"]}
+      aria-live="polite"
+      variant="lede"
+      tabindex="-1"
+    >
+      This is a sample success message.
+    </Text>
+  </div>
+  <form class:list={[styles.form, className]} novalidate {...rest}>
+    <Text
+      class:list={[styles.formError, "error-message"]}
+      aria-live="polite"
+      highlight="salmon"
+      bold
+    />
+    <slot />
+    {turnstile && (
+      <div class={styles.turnstile}>
+        <div data-turnstile-container />
+      </div>
+    )}
+  </form>
+</action-form>
+
+<script>
+  import {ActionForm} from "./ActionFormScript.ts";
+
+  if (!customElements.get("action-form")) {
+    customElements.define("action-form", ActionForm);
+  }
+</script>
