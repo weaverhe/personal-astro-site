@@ -2,8 +2,7 @@
 CREATE TABLE contacts (
   -- contact info 
   email TEXT PRIMARY KEY COLLATE NOCASE,
-  firstName TEXT,
-  lastName TEXT,
+  name TEXT NOT NULL,
   status TEXT NOT NULL DEFAULT 'pending' CHECK(status IN ('pending', 'subscribed', 'unsubscribed')),
   -- tokens for confirmation/unsubscribe
   confirmationToken TEXT UNIQUE,
