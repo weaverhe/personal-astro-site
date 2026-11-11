@@ -1,5 +1,7 @@
+import {env} from "cloudflare:workers";
 import {ActionError, defineAction} from "astro:actions";
 import {z} from "astro/zod";
+import {createPendingContact} from "../utils/newsletter.ts";
 import {isTurnstileTokenValid} from "./verify-turnstile.ts";
 
 export const newsletter = defineAction({
@@ -27,12 +29,18 @@ export const newsletter = defineAction({
       });
     }
 
-    console.log("Newsletter subscription:", {name, email});
+    try {
+      await createPendingContact(env.NEWSLETTER_DB, name, email);
+    } catch (error) {
+      console.error("Failed to create pending contact:", error);
+      throw new ActionError({
+        code: "INTERNAL_SERVER_ERROR",
+        message: "Sign up failed, please try again.",
+      });
+    }
 
     return {
       success: true,
-      name,
-      email,
     };
   },
 });
