@@ -1,0 +1,25 @@
+---
+export const prerender = true;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Spike</title>
+    <style is:inline>
+      @media screen and (min-width: 600px) {
+        .spike-mobile {
+          font-size: 18px !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!--[if mso]><p>Outlook only</p><![endif]-->
+    <p class="spike-mobile" style={{color: "#333333", padding: "12px"}}>
+      Hi %%name%%
+    </p>
+    <a href="%%confirmUrl%%">Confirm</a>
+  </body>
+</html>
