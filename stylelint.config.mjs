@@ -29,4 +29,18 @@ export default {
       {ignorePseudoClasses: ["global", "local"]},
     ],
   },
+  overrides: [
+    {
+      files: ["src/emails/**/*.astro", "src/pages/emails/**/*.astro"],
+      rules: {
+        "media-feature-range-notation": "prefix",
+        "display-notation": "short",
+        "property-layout-mappings": "physical",
+        "unit-layout-mappings": "physical",
+        "value-keyword-layout-mappings": "physical",
+        "color-no-hex": null,
+        "function-disallowed-list": null,
+      },
+    },
+  ],
 };
