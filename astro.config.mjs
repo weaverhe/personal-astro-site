@@ -6,6 +6,7 @@ import cloudflare from "@astrojs/cloudflare";
 // https://astro.build/config
 // eslint-disable-next-line unicorn/no-top-level-side-effects -- Astro recommended setup!
 export default defineConfig({
+  site: "https://www.hweaver.com",
   fonts: [
     {
       provider: fontProviders.local(),
