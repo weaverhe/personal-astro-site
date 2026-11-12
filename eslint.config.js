@@ -23,13 +23,21 @@ export default defineConfig([
   eslintPluginAstro.configs.recommended,
   eslintPluginAstro.configs["jsx-a11y-recommended"],
   {
-    files: ["src/components/**/*.{js,jsx,ts,tsx,astro}"],
+    files: [
+      "src/components/**/*.{js,jsx,ts,tsx,astro}",
+      "src/emails/components/**/*.{js,jsx,ts,tsx,astro}",
+      "src/emails/layouts/**/*.{js,jsx,ts,tsx,astro}",
+    ],
     rules: {
       "unicorn/filename-case": [
         "error",
         {
           case: "pascalCase",
-          directoryRoots: ["src/components"],
+          directoryRoots: [
+            "src/components",
+            "src/emails/components",
+            "src/emails/layouts",
+          ],
         },
       ],
     },
