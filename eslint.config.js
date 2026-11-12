@@ -58,4 +58,19 @@ export default defineConfig([
       ],
     },
   },
+  {
+    files: ["src/pages/**/*.{astro,ts,js}"],
+    rules: {
+      "unicorn/consistent-boolean-name": [
+        "error",
+        {
+          prefixes: {
+            had: true,
+            does: true,
+          },
+          ignore: ["^prerender$"],
+        },
+      ],
+    },
+  },
 ]);
