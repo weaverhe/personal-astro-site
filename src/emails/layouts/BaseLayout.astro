@@ -1,0 +1,59 @@
+---
+// Credit: https://www.goodemailcode.com/email-code/template
+type Props = {
+  title: string;
+};
+
+const {title} = Astro.props;
+---
+
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:w="urn:schemas-microsoft-com:office:word"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="format-detection"
+      content="telephone=no, date=no, address=no, email=no, url=no"
+    />
+    <meta name="x-apple-disable-message-reformatting" content="true" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="robots" content="noindex" />
+    <title>{title}</title>
+    <!--[if mso]>
+    <noscript>
+      <xml>
+        <o:OfficeDocumentSettings>
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+        <w:WordDocument>
+          <w:DontUseAdvancedTypographyReadingMail/>
+        </w:WordDocument>
+      </xml>
+    </noscript>
+    <![endif]-->
+    <style is:inline>
+      :root {
+        color-scheme: light dark;
+      }
+    </style>
+  </head>
+  <body class="body" xml:lang="en">
+    <div
+      role="article"
+      aria-roledescription="email"
+      aria-label={title}
+      lang="en"
+      dir="ltr"
+      style="font-size:medium; font-size:max(16px, 1rem)"
+    >
+      <slot />
+    </div>
+  </body>
+</html>
