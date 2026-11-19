@@ -1,25 +1,34 @@
 ---
+import BaseLayout from "../../emails/layouts/BaseLayout.astro";
+import Container from "../../emails/components/Container.astro";
+import Text from "../../emails/components/Text.astro";
+import Button from "../../emails/components/Button.astro";
+import Header from "../../emails/components/Header.astro";
+import Spacer from "../../emails/components/Spacer.astro";
+import Preview from "../../emails/components/Preview.astro";
+
 export const prerender = true;
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Spike</title>
-    <style is:inline>
-      @media screen and (min-width: 600px) {
-        .spike-mobile {
-          font-size: 18px !important;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <!--[if mso]><p>Outlook only</p><![endif]-->
-    <p class="spike-mobile" style={{color: "#333333", padding: "12px"}}>
-      Hi %%name%%
-    </p>
-    <a href="%%confirmUrl%%">Confirm</a>
-  </body>
-</html>
+<BaseLayout title="Confirm Newsletter Subscription">
+  <Preview>Thanks for subscribing to my newsletter!</Preview>
+  <Container>
+    <Spacer height="24px" />
+    <Header as="h1">Thanks for Subscribing!</Header>
+    <Spacer height="48px" />
+    <Text>Hi %%name%%,</Text>
+    <Text>
+      I'm excited to have you on board! Please confirm your subscription by
+      clicking the button below, and you'll see me in your inbox again soon.
+    </Text>
+    <Spacer height="24px" />
+    <Text align="center">
+      <Button aria-label="Confirm Subscription" href="%%confirmUrl%%">
+        Confirm
+      </Button>
+    </Text>
+    <Text align="center" variant="caption" italic>
+      If you did not subscribe to this newsletter, please ignore this email.
+    </Text>
+  </Container>
+</BaseLayout>
