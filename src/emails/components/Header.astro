@@ -1,0 +1,41 @@
+---
+import {stroke, radius, space, lightTheme, font} from "../theme.ts";
+import {darkClass} from "../dark-mode.ts";
+
+type Props = {
+  tilt?: "left" | "right";
+  as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+};
+
+const {as: Element = "h1", tilt = "left"} = Astro.props;
+---
+
+<table role="presentation" align="center" style={{margin: "0 auto"}}>
+  <tr>
+    <td
+      class:list={[darkClass.buttonBorder, darkClass.headerBackground]}
+      style={{
+        backgroundColor: lightTheme.headerBackground,
+        border: `${stroke.bold} solid ${lightTheme.buttonBorder}`,
+        borderRadius: radius.lg,
+        boxShadow: `5px 5px 0 ${lightTheme.buttonBorder}`,
+        transform: tilt === "left" ? "rotate(-2deg)" : "rotate(2deg)",
+        padding: `${space[3]} ${space[5]}`,
+      }}
+    >
+      <Element
+        class={darkClass.headerText}
+        style={{
+          margin: "0",
+          lineHeight: "1.7",
+          fontFamily: font.sans,
+          fontSize: "1.8em",
+          fontWeight: "900",
+          color: lightTheme.headerText,
+        }}
+      >
+        <slot />
+      </Element>
+    </td>
+  </tr>
+</table>

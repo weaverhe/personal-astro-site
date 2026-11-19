@@ -1,0 +1,19 @@
+---
+type Props = {
+  /**
+   * The height of the spacer.
+   */
+  height: string;
+};
+
+const {height} = Astro.props;
+---
+
+<div
+  style={{
+    lineHeight: height,
+    height,
+  }}
+>
+  &#8202;
+</div>

@@ -1,0 +1,47 @@
+---
+// Credit: https://www.goodemailcode.com/email-code/container
+import {darkClass} from "../dark-mode.ts";
+import {contentWidth, lightTheme} from "../theme.ts";
+import MsoWrap from "./MsoWrap.astro";
+
+type Props = {
+  padding?: string;
+  background?: "page" | "surface";
+};
+
+const {background = "page", padding} = Astro.props;
+const backgroundColor = lightTheme[background];
+---
+
+<MsoWrap condition="true">
+  <table
+    slot="outlook"
+    role="presentation"
+    style={{width: contentWidth}}
+    align="center"
+  >
+    <tr>
+      <td
+        style={{
+          background: backgroundColor,
+          padding,
+        }}
+      >
+        <!-- content -->
+      </td>
+    </tr>
+  </table>
+  <div
+    slot="others"
+    class={darkClass[background]}
+    style={{
+      maxWidth: contentWidth,
+      margin: "0 auto",
+      padding,
+      background: backgroundColor,
+    }}
+  >
+    <!-- content -->
+  </div>
+  <slot />
+</MsoWrap>

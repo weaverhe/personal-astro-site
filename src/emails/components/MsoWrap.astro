@@ -1,0 +1,40 @@
+---
+/**
+ * Splits markup between Outlook and every other email client.
+ * - "outlook" slot: markup only Outlook renders
+ * - "others" slot: markup every other email client renders
+ * - default slot: content every client renders
+ *
+ * In the "outlook" and "others" slots, `<!-- content -->` indicates
+ * where the default slot goes. Without it, the markup goes before the content.
+ */
+type Props = {
+  /**
+   * The conditional comment test
+   */
+  condition?: "mso" | "true";
+};
+
+const contentMarker = "<!-- content -->";
+const {condition = "mso"} = Astro.props;
+const splitAtMarker = (html = "") => {
+  const [before = "", after = ""] = html.split(contentMarker);
+  return {before, after};
+};
+
+const forOutlook = (html: string) =>
+  html ? `<!--[if ${condition}]>${html}<![endif]-->` : "";
+const forOthers = (html: string) =>
+  html ? `<!--[if !${condition}]><!-->${html}<!--<![endif]-->` : "";
+
+const outlookContent = splitAtMarker(await Astro.slots.render("outlook"));
+const othersContent = splitAtMarker(await Astro.slots.render("others"));
+---
+
+<Fragment
+  set:html={forOutlook(outlookContent.before) + forOthers(othersContent.before)}
+/>
+<slot />
+<Fragment
+  set:html={forOutlook(outlookContent.after) + forOthers(othersContent.after)}
+/>

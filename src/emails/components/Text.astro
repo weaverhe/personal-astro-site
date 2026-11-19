@@ -1,0 +1,161 @@
+---
+import type {Polymorphic} from "astro/types";
+import {lightTheme, font} from "../theme.ts";
+import {darkClass} from "../dark-mode.ts";
+
+type TextTag =
+  | "h1"
+  | "h2"
+  | "h3"
+  | "h4"
+  | "h5"
+  | "h6"
+  | "p"
+  | "code"
+  | "span"
+  | "a"
+  | "em"
+  | "strong";
+
+/**
+ * A text component with email-friendly styles.
+ */
+type Props<Tag extends TextTag = TextTag> = Polymorphic<{as: Tag}> & {
+  /**
+   * The HTML element to render.
+   */
+  as?: Tag;
+  /**
+   * The visual variant to apply.
+   * Sensible defaults applied based on the selected element.
+   */
+  variant?: keyof typeof variantStyles;
+  /**
+   * The text color to apply.
+   */
+  color?: "text" | "mutedText" | "link";
+  /**
+   * Whether the text should be bold.
+   */
+  bold?: boolean;
+  /**
+   * Whether the text should be uppercase
+   */
+  uppercase?: boolean;
+  /**
+   * Whether the text should be italic
+   */
+  italic?: boolean;
+  /**
+   * The text alignment to apply.
+   */
+  align?: "left" | "center" | "right";
+};
+
+const variantStyles = {
+  h1: {
+    fontSize: "3.5em",
+    fontWeight: "bold",
+    margin: "1.115em 0",
+  },
+  h2: {
+    fontSize: "3em",
+    fontWeight: "bold",
+    margin: "1em 0",
+  },
+  h3: {
+    fontSize: "2.5em",
+    fontWeight: "bold",
+    margin: "0.825em 0",
+  },
+  h4: {
+    fontSize: "2em",
+    fontWeight: "bold",
+    margin: "1em 0",
+  },
+  h5: {
+    fontSize: "1.5em",
+    fontWeight: "bold",
+    margin: "1em 0",
+  },
+  h6: {
+    fontSize: "1.25em",
+    fontWeight: "bold",
+    margin: "1em 0",
+  },
+  lede: {
+    fontSize: "1.25em",
+    margin: "1.25em 0",
+  },
+  body: {
+    fontSize: "1.125em",
+    margin: "1.5em 0",
+  },
+  caption: {
+    fontSize: "1em",
+    margin: "1.75em 0",
+  },
+  link: {
+    fontSize: "1.125em",
+    color: lightTheme.link,
+  },
+  code: {
+    fontFamily: font.mono,
+    fontSize: "1em",
+  },
+} as const;
+
+type As = NonNullable<Props<TextTag>["as"]>;
+type Variant = keyof typeof variantStyles;
+
+const DEFAULT_VARIANT: Record<As, Variant> = {
+  h1: "h1",
+  h2: "h2",
+  h3: "h3",
+  h4: "h4",
+  h5: "h5",
+  h6: "h6",
+  p: "body",
+  code: "code",
+  span: "body",
+  a: "link",
+  em: "body",
+  strong: "body",
+};
+
+let {color} = Astro.props;
+
+const {
+  as: Element = "p",
+  bold = false,
+  uppercase,
+  italic = false,
+  variant = DEFAULT_VARIANT[Element],
+  ...rest
+} = Astro.props;
+
+color ??= Element === "a" ? "link" : "text";
+
+const styles = {
+  fontFamily: font.sans,
+  textAlign: Astro.props.align ?? "left",
+  ...variantStyles[variant],
+  color: lightTheme[color],
+} as Record<string, string>;
+
+if (bold) {
+  styles.fontWeight = "bold";
+}
+
+if (uppercase) {
+  styles.textTransform = "uppercase";
+}
+
+if (italic) {
+  styles.fontStyle = "italic";
+}
+---
+
+<Element style={styles} {...rest} class={darkClass[color]}>
+  <slot />
+</Element>

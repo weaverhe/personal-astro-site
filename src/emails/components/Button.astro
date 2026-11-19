@@ -1,0 +1,48 @@
+---
+import {lightTheme, font, radius, stroke} from "../theme.ts";
+import {darkClass} from "../dark-mode.ts";
+/**
+ * A button component for email templates.
+ * Actually a link, not a real button. This is email, after all.
+ */
+type Props = {
+  /**
+   * The URL the button should link to.
+   */
+  href: string;
+};
+
+const {href, ...rest} = Astro.props;
+---
+
+<a
+  href={href}
+  style={{
+    backgroundColor: lightTheme.buttonBackground,
+    textDecoration: "none",
+    padding: ".5em 2em",
+    color: lightTheme.buttonText,
+    display: "inline-block",
+    borderRadius: radius.pill,
+    msoPaddingAlt: "0",
+    textUnderlineColor: lightTheme.buttonBackground,
+    fontFamily: font.sans,
+    textTransform: "uppercase",
+    fontWeight: "600",
+    fontSize: "1.25em",
+    letterSpacing: "0.02em",
+    border: `${stroke.bold} solid ${lightTheme.buttonBorder}`,
+    boxShadow: `5px 5px 0 ${lightTheme.buttonBorder}`,
+  }}
+  target="_blank"
+  class:list={[
+    darkClass.buttonBackground,
+    darkClass.buttonText,
+    darkClass.buttonBorder,
+  ]}
+  {...rest}
+>
+  <!--[if mso]><i style="mso-font-width:200%;mso-text-raise:100%" hidden>&emsp;</i><span style="mso-text-raise:50%;"><![endif]-->
+  <slot />
+  <!--[if mso]></span><i style="mso-font-width:200%;" hidden>&emsp;&#8203;</i><![endif]-->
+</a>

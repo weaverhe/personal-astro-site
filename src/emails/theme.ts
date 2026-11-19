@@ -12,9 +12,41 @@ export const palette = {
   salmon: "#ffabab",
   lilac: "#d7b2d8",
   pink: "#ff677d",
-  red: "#f83f61",
+  red: "#c6324e",
   gray: "#5e4a4f",
   ink: "#2b1a1e",
+} as const;
+
+/**
+ * Light theme values
+ */
+export const lightTheme = {
+  page: palette.cream,
+  surface: palette.white,
+  text: palette.ink,
+  mutedText: palette.gray,
+  link: palette.red,
+  buttonBackground: palette.red,
+  buttonText: palette.white,
+  buttonBorder: palette.ink,
+  headerBackground: palette.peach,
+  headerText: palette.ink,
+} as const;
+
+/**
+ * Dark theme values
+ */
+export const darkTheme = {
+  page: palette.ink,
+  surface: palette.gray,
+  text: palette.cream,
+  mutedText: palette.peach,
+  link: palette.lilac,
+  buttonBackground: palette.lilac,
+  buttonText: palette.ink,
+  buttonBorder: palette.cream,
+  headerBackground: palette.salmon,
+  headerText: palette.ink,
 } as const;
 
 /**
@@ -54,4 +86,4 @@ export const stroke = {
   fine: "2px",
 } as const;
 
-export const contentWidth = 600;
+export const contentWidth = "600px";

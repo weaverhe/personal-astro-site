@@ -1,0 +1,8 @@
+---
+const filler = "&#8199;&#65279;&#847;".repeat(150);
+---
+
+<div style=" overflow: hidden;display: none; max-height: 0;">
+  <slot />
+  <Fragment set:html={filler} />
+</div>
